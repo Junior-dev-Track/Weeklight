@@ -1,16 +1,16 @@
 # Projet La Montagne
 
-La Montagne est un projet ambitieux créé par BeCode Liège. L'objectif est de réaliser un projet solide en 6 semaines.
+La Montagne est un projet ambitieux créé par BeCode Liège. L'objectif est de réaliser un projet solide en groupe en 6 semaines.
 
 ## Équipe dans le projet
 
 Dans le projet, nous sommes 3 personnes :
 
-- Marc Romero (Back-End)
 - Julien Tilman (Front-End)
+- Marc Romero (Back-End)
 - Denis Gerardy (Full-Stack)
 
-## Nom du projet : Week-Light
+## Nom de l'application : Week-Light
 
 Signification : Mise en lumière de la semaine
 
@@ -18,14 +18,16 @@ Signification : Mise en lumière de la semaine
 
 Week-Light est un réseau social similaire à Facebook, mais avec une perspective différente. L'utilisateur choisira un seul contenu par semaine à sauvegarder dans sa biographie (autrement dit : sa ligne du temps). Voici comment cela fonctionnera :
 
-- Pendant toute la semaine, l'utilisateur pourra poster des photos, des morceaux de musique qu'il aime, des liens de sites qui l'ont marqué, ou même des commentaires propres ou ceux d'autres utilisateurs.
-- Arrivé le dimanche, il devra choisir un seul contenu à sauvegarder et afficher dans sa ligne du temps. Tout le reste du contenu sera effacé définitivement.
+- **Pendant toute la semaine,** l'utilisateur pourra poster des photos, des morceaux de musique qu'il aime, des liens de sites qui l'ont marqué, ou même des commentaires propres ou ceux d'autres utilisateurs.
+- **Arrivé le dimanche,** il devra choisir un seul contenu à sauvegarder et afficher dans sa ligne du temps. Tout le reste du contenu sera effacé définitivement.
 
-L'objectif est que l'utilisateur puisse vraiment apprécier le contenu qui l'a marqué pendant la semaine. Nous voulons éviter de créer un réseau social comme Instagram et bien d'autres, où les publications en masse ne permettent pas de comprendre ce qui a réellement apprecier à la personne (et de là éviter "un réseau d'images"). Au fil du temps, il pourra revoir ce contenu, tout comme ses amis (ses suiveurs sur la plateforme), pour voir ce qui a vraiment compté pour lui à chaque semaine, et donc au fil du temps, dans sa vie.
+L'objectif est que l'utilisateur puisse vraiment apprécier le contenu qui l'a marqué pendant la semaine. Nous voulons éviter de créer un réseau social comme Instagram et bien d'autres, où les publications en masse ne permettent pas de comprendre ce qui a réellement marqué l'utilisateur (et de là éviter "un réseau social d'image"). Au fil du temps, il pourra revoir ce contenu, tout comme ses amis (ses suiveurs sur la plateforme), pour voir ce qui a vraiment compté pour lui chaque semaine, et donc au fil du temps, dans sa vie.
 
-Nous allons essayer d'inciter les utilisateurs de la plateforme à créer de vrais moments qui les ont marqués (que ce soit négatif ou positif). Pour cela, nous mettrons en place un bouton simple dans le profil de l'utilisateur qui pourra activer ou désactiver à tout moment sa biographie pour qu'elle soit visible seulement par ses amis au lieu qu'elle soit visible par tous les utilisateurs de la plateforme.
+Nous allons essayer d'inciter les utilisateurs de la plateforme à créer de vrais moments qui les ont marqués (que ce soit négatif ou positif). Pour le moment, nous mettrons seulement en place un bouton simple dans le profil de l'utilisateur qui pourra activer ou désactiver à tout moment sa biographie pour qu'elle soit visible seulement par ses amis ou par tous les utilisateurs de la plateforme. (Comme aussi un autre bouton pour bloquer des utilisateur souhaité)
 
-### Gestion du Contenu le Dimanche
+Comme tout réseau social qui se respecte, nous mettrons aussi en place un chat pour discuter avec les autres utilisateurs de la plateforme.
+
+### Gestion du contenu le Dimanche
 
 Un défi majeur du projet est de gérer les utilisateurs qui ne se connectent pas le dimanche pour sélectionner leur contenu le plus marquant.
 
@@ -65,7 +67,7 @@ L'objectif est de trouver un équilibre entre la nécessité de réduire le cont
 
 - Socket.IO
 
-#### Base de donnée
+#### Base de données
 
 - PHPAdmin
 
@@ -73,10 +75,10 @@ L'objectif est de trouver un équilibre entre la nécessité de réduire le cont
 
 ### Les Couleurs
 
-Nous voulons faire quelque chose de marquant et bien différent, c'est pourquoi nous avons opté pour plusieurs couleurs différentes pour le site. Cela nous aidera à attirer un large jeune.
+Nous voulons faire quelque chose de marquant et bien différent, c'est pourquoi nous avons opté pour plusieurs couleurs différentes pour le site. Cela nous aidera à attirer un large public jeune.
 
 - **Bleu** : Associé à la tranquillité, la confiance et la sérénité. Idéal pour créer une ambiance apaisante et professionnelle.
 - **Lavande** : Apaisante et douce, associée à la tranquillité et au bien-être.
-- **Jaune** :
+- **Jaune** : Évoque la positivité et l'énergie.
 - **Vert** : Évoque la nature, la croissance et la santé, offrant une sensation de fraîcheur et de relaxation.
-- **Gris clair** : Créent une toile de fond apaisante et élégante, permettant de se concentrer sur le contenu.
+- **Gris clair** : Crée une toile de fond apaisante et élégante, permettant de se concentrer sur le contenu.
