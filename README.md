@@ -6,9 +6,9 @@ La Montagne est un projet ambitieux créé par BeCode Liège. L'objectif est de 
 
 Dans le projet, nous sommes 3 personnes :
 
-- Julien Tilman (Front-End)
-- Marc Romero (Back-End)
-- Denis Gerardy (Full-Stack)
+- Julien Tilman (Front-End) https://github.com/JulienTilman
+- Marc Romero (Back-End) https://github.com/webduckdodgers
+- Denis Gerardy (Full-Stack) https://github.com/artisan24fullstack
 
 ## Nom de l'application : Week-Light
 
@@ -16,10 +16,11 @@ Signification : Mise en lumière de la semaine
 
 ## Qu'est-ce que Week-Light ?
 
-Week-Light est un réseau social similaire à Facebook, mais avec une perspective différente. L'utilisateur choisira un seul contenu par semaine à sauvegarder dans sa biographie (autrement dit : sa ligne du temps). Voici comment cela fonctionnera :
+**Week-Light est un réseau social similaire à Facebook,** mais avec une perspective différente. L'utilisateur choisira un seul contenu par semaine à sauvegarder dans sa biographie (autrement dit : Une ligne chronologique).
+Voici comment cela fonctionnera :
 
 - **Pendant toute la semaine,** l'utilisateur pourra poster des photos, des morceaux de musique qu'il aime, des liens de sites qui l'ont marqué, ou même des commentaires propres ou ceux d'autres utilisateurs.
-- **Arrivé le dimanche,** il devra choisir un seul contenu à sauvegarder et afficher dans sa ligne du temps. Tout le reste du contenu sera effacé définitivement.
+- **Arrivé le dimanche,** il devra choisir un seul contenu à sauvegarder et afficher dans sa ligne chronologique. (Tout le reste du contenu sera effacé définitivement)
 
 L'objectif est que l'utilisateur puisse vraiment apprécier le contenu qui l'a marqué pendant la semaine. Nous voulons éviter de créer un réseau social comme Instagram et bien d'autres, où les publications en masse ne permettent pas de comprendre ce qui a réellement marqué l'utilisateur (et de là éviter "un réseau social d'image"). Au fil du temps, il pourra revoir ce contenu, tout comme ses amis (ses suiveurs sur la plateforme), pour voir ce qui a vraiment compté pour lui chaque semaine, et donc au fil du temps, dans sa vie.
 
