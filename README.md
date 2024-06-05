@@ -6,9 +6,9 @@ La Montagne est un projet ambitieux créé par BeCode Liège. L'objectif est de 
 
 Dans le projet, nous sommes 3 personnes :
 
-- Julien Tilman (Front-End) https://github.com/JulienTilman
-- Marc Romero (Back-End) https://github.com/webduckdodgers
-- Denis Gerardy (Full-Stack) https://github.com/artisan24fullstack
+- Julien Tilman (Front-End) [Lien GitHub](https://github.com/JulienTilman)
+- Marc Romero (Back-End) [Lien GitHub](https://github.com/webduckdodgers)
+- Denis Gerardy (Full-Stack) [Lien GitHub](https://github.com/artisan24fullstack)
 
 ## Nom de l'application : Week-Light
 
@@ -16,8 +16,7 @@ Signification : Mise en lumière de la semaine
 
 ## Qu'est-ce que Week-Light ?
 
-**Week-Light est un réseau social similaire à Facebook,** mais avec une perspective différente. L'utilisateur choisira un seul contenu par semaine à sauvegarder dans sa biographie (autrement dit : Une ligne chronologique).
-Voici comment cela fonctionnera :
+Week-Light est un réseau social similaire à Facebook, mais avec une perspective différente. L'utilisateur choisira un seul contenu par semaine à sauvegarder dans sa biographie (autrement dit : une ligne chronologique). Voici comment cela fonctionnera :
 
 - **Pendant toute la semaine,** l'utilisateur pourra poster des photos, des morceaux de musique qu'il aime, des liens de sites qui l'ont marqué, ou même des commentaires propres ou ceux d'autres utilisateurs.
 - **Arrivé le dimanche,** il devra choisir un seul contenu à sauvegarder et afficher dans sa ligne chronologique. (Tout le reste du contenu sera effacé définitivement)
@@ -83,3 +82,13 @@ Nous voulons faire quelque chose de marquant et bien différent, c'est pourquoi 
 - **Jaune** : Évoque la positivité et l'énergie.
 - **Vert** : Évoque la nature, la croissance et la santé, offrant une sensation de fraîcheur et de relaxation.
 - **Gris clair** : Crée une toile de fond apaisante et élégante, permettant de se concentrer sur le contenu.
+
+### Structute des quelques idées de page :
+
+#### Page Index
+
+<img src="./img/structure page index.jpeg" alt="Page Index" height="300">
+
+#### Page Profil Utilisateur
+
+<img src="./img/structure page profil utilisateur.jpeg" alt="Page Profil Utilisateur" height="300">
