@@ -8,7 +8,7 @@ Dans le projet, nous sommes 3 personnes :
 
 - Julien Tilman (Front-End) [Lien GitHub](https://github.com/JulienTilman)
 - Marc Romero (Back-End) [Lien GitHub](https://github.com/webduckdodgers)
-- Denis Gerardy (Full-Stack) [Lien GitHub](https://github.com/artisan24fullstack)
+- Denis (Full-Stack) [Lien GitHub](https://github.com/artisan24fullstack)
 
 ## Nom de l'application : Week-Light
 
