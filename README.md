@@ -9,7 +9,7 @@ Dans le projet, nous sommes 3 personnes :
 - Julien Tilman (Front-End) [Lien GitHub](https://github.com/JulienTilman)
 - Marc Romero (Back-End) [Lien GitHub](https://github.com/webduckdodgers)
 - Denis (Full-Stack)
-  
+
 ## Nom de l'application : Week-Light
 
 Signification : Mise en lumière de la semaine
@@ -41,35 +41,35 @@ L'objectif est de trouver un équilibre entre la nécessité de réduire le cont
 
 ## Technologies
 
-### Front-End
+### Tech Front-End :
 
 - React
 
 #### Langage
 
-- Sass
+    Sass
 
-### Back-End
+#### Bibliothèque
+
+    Tailwind CSS
+
+### Tech Back-End :
 
 - NodeJS
 
 #### Framework
 
-- ExpressJS
+    ExpressJS
 
 #### Fonctions
 
-- Middleware
-- Body-Parser
-- Helmet
+    Middleware
+    Body-Parser
+    Helmet
 
 #### Bibliothèque
 
-- Socket.IO
-
-#### Base de données
-
-- PHPAdmin
+    Socket.IO
 
 ## Design et Interface (Rien n'est encore sûr)
 
