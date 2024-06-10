@@ -41,31 +41,29 @@ L'objectif est de trouver un équilibre entre la nécessité de réduire le cont
 
 ## Technologies
 
-### Tech Front-End :
-
-- React
+### Tech Front-End
 
 #### Langage
 
-    Sass
+    CSS
 
 #### Bibliothèque
 
-    Tailwind CSS
+    ?
 
 ### Tech Back-End :
 
-- NodeJS
+#### Environnement
+
+    PHP, Node.js
 
 #### Framework
 
-    ExpressJS
+    Express.js
 
 #### Fonctions
 
-    Middleware
-    Body-Parser
-    Helmet
+    ?
 
 #### Bibliothèque
 
