@@ -4,13 +4,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404</title>
+    <title>Messages | Weeklight</title>
+    <link rel="stylesheet" href="./../styles/import.css" />
 </head>
 
 <body>
+    <?php include_once __DIR__ . "/components/header.php" ?>
+
     <main>
-        <h1>Page 404</h1>
-        <a href="/">Retourner à la page principale</a>
+        <h2>Page Messages</h2>
     </main>
 </body>
 

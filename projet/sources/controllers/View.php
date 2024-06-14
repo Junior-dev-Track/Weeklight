@@ -14,6 +14,21 @@ class View
         include __DIR__ . "/../../public/views/forgot-password.php";
     }
 
+    public function friends(): void
+    {
+        include __DIR__ . "/../../public/views/friends.php";
+    }
+
+    public function messages(): void
+    {
+        include __DIR__ . "/../../public/views/messages.php";
+    }
+
+    public function profile(): void
+    {
+        include __DIR__ . "/../../public/views/profile.php";
+    }
+
     public function error_404(): void
     {
         include __DIR__ . "/../../public/views/404.php";

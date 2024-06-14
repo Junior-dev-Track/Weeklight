@@ -16,6 +16,10 @@ class Login
 
     public function authenticate($email, $password)
     {
+        if (empty($email) || empty($password)) {
+            return '<h1 class="error_message">Veuillez remplir tous les champs</h1>';
+        }
+
         $SQL = "SELECT * FROM users WHERE email = :email";
         $statement = $this->connection->PDO->prepare($SQL);
 

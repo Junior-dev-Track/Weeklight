@@ -11,6 +11,6 @@ try {
     $router = new Root();
     $router->path();
 } catch (Exception) {
-    header(__DIR__ . "/views/maintenance.php");
+    header(__DIR__ . "/views/500.php");
     exit();
 }

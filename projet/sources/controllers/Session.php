@@ -9,8 +9,6 @@ class Session
 {
     public function subscribe()
     {
-        session_start();
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $firstName = $_POST["first_name"];
             $lastName = $_POST["last_name"];
@@ -27,8 +25,6 @@ class Session
 
     public function login()
     {
-        session_start();
-
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $email = $_POST['email'];
             $password = $_POST['password'];
@@ -37,6 +33,18 @@ class Session
             $result = $login->authenticate($email, $password);
 
             echo $result;
+        }
+    }
+
+    public function logout()
+    {
+        if (isset($_POST['logout'])) {
+            session_unset();
+            session_destroy();
+
+            header('Location: http://localhost:3000/');
+
+            exit();
         }
     }
 }

@@ -2,11 +2,17 @@
 
 use controllers\Session;
 
-$connection = new Session();
-$connection->login();
+session_start();
 
-if (isset($_SESSION["user"])) {
-    require_once __DIR__ . "/components/home.php";
-} else {
+$connection = new Session();
+$connection->logout();
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email']) && isset($_POST['password'])) {
+    $connection->login();
+}
+
+if (!isset($_SESSION["user"])) {
     require_once __DIR__ . "/components/login.php";
+} else {
+    require_once __DIR__ . "/components/home.php";
 }

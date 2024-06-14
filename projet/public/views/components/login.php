@@ -69,14 +69,14 @@
         <input type="password" name="password" placeholder="Mot de passe" />
         <p class="general_condition">
           En cliquant sur "s’inscrire", vous acceptez nos
-          <a href="#" target=" _blank">conditions générales</a>.
+          <a href="/" target=" _blank">conditions générales</a>.
         </p>
         <p class="general_condition">
           Découvrez comment nous recueillons, utilisons et partageons vos
           données en lisant notre
-          <a href="#" target="_blank">politique de confidentialité</a> et
+          <a href="/" target="_blank">politique de confidentialité</a> et
           comment nous utilisons les cookies et autres technologies similaires
-          en consultant notre <a href="#" target="_blank">politique d’utilisation des cookies</a>.
+          en consultant notre <a href="/" target="_blank">politique d’utilisation des cookies</a>.
         </p>
         <p class="general_condition">
           Vous recevrez peut-être des notifications par texto de notre part et
