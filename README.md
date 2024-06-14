@@ -7,16 +7,17 @@ La Montagne est un projet ambitieux créé par BeCode Liège. L'objectif est de 
 Dans le projet, nous sommes 3 personnes :
 
 - Julien Tilman (Front-End) [Lien GitHub](https://github.com/JulienTilman)
-- Marc Romero (Back-End) [Lien GitHub](https://github.com/webduckdodgers)
+- Marc Romero (Full-Stack) [Lien GitHub](https://github.com/webduckdodgers)
 - Denis (Full-Stack)
+  z
 
-## Nom de l'application : Week-Light
+## Nom de l'application : Weeklight
 
 Signification : Mise en lumière de la semaine
 
-## Qu'est-ce que Week-Light ?
+## Qu'est-ce que Weeklight ?
 
-Week-Light est un réseau social similaire à Facebook, mais avec une perspective différente. L'utilisateur choisira un seul contenu par semaine à sauvegarder dans sa biographie (autrement dit : une ligne chronologique). Voici comment cela fonctionnera :
+Weeklight est un réseau social similaire à Facebook, mais avec une perspective différente. L'utilisateur choisira un seul contenu par semaine à sauvegarder dans sa biographie (autrement dit : une ligne chronologique). Voici comment cela fonctionnera :
 
 - **Pendant toute la semaine,** l'utilisateur pourra poster des photos, des morceaux de musique qu'il aime, des liens de sites qui l'ont marqué, ou même des commentaires propres ou ceux d'autres utilisateurs.
 - **Arrivé le dimanche,** il devra choisir un seul contenu à sauvegarder et afficher dans sa ligne chronologique. (Tout le reste du contenu sera effacé définitivement)
@@ -55,11 +56,11 @@ L'objectif est de trouver un équilibre entre la nécessité de réduire le cont
 
 #### Environnement
 
-    PHP, Node.js
+    PHP et Node.js
 
 #### Framework
 
-    Express.js
+    ?
 
 #### Fonctions
 
@@ -85,8 +86,8 @@ Nous voulons faire quelque chose de marquant et bien différent, c'est pourquoi 
 
 #### Page Index
 
-<img src="./img/structure page index.jpeg" alt="Page Index" height="300">
+<img src="./images/structure page index.jpeg" alt="Page Index" height="300">
 
 #### Page Profil Utilisateur
 
-<img src="./img/structure page profil utilisateur.jpeg" alt="Page Profil Utilisateur" height="300">
+<img src="./images/structure page profil utilisateur.jpeg" alt="Page Profil Utilisateur" height="300">

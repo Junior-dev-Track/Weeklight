@@ -6,5 +6,7 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Macbook\\Projet\\' => array($baseDir . '/src'),
+    'router\\' => array($baseDir . '/sources/router'),
+    'models\\' => array($baseDir . '/sources/models'),
+    'controllers\\' => array($baseDir . '/sources/controllers'),
 );

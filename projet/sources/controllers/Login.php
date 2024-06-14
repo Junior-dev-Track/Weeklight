@@ -27,12 +27,13 @@ class Login
 
             if ($user && password_verify($password, $user['password'])) {
                 $_SESSION["user"] = $user;
-                return "<h1>Connexion réussie !</h1>";
+                header('Location: http://localhost:3000/');
+                exit();
             } else {
-                return "<h1>Email ou mot de passe incorrect</h1>";
+                return '<h1 class="error_message">Email ou mot de passe incorrect</h1>';
             }
         } catch (PDOException $error) {
-            return "<h1>Erreur lors de la connexion</h1> " . $error->getMessage();
+            return '<h1>Erreur lors de la connexion</h1> ' . $error->getMessage();
         }
     }
 }

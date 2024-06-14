@@ -1,0 +1,265 @@
+/* MAIN LOGIN : */
+.login {
+  padding-top: 3%;
+  width: 100%;
+  position: absolute;
+}
+
+.login > .container_login {
+  margin: auto;
+  width: 80%;
+  display: flex;
+  /* flex-wrap: wrap; */
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  row-gap: 70px;
+}
+
+/* SECTION ABOUT : */
+.about > .title {
+  text-align: center;
+  font-size: 72px;
+  padding-bottom: 5%;
+}
+
+.about > .text {
+  text-align: center;
+  font-size: 24px;
+}
+
+/* SECTION CONNEXION : */
+.container_connexion {
+  position: relative;
+  background: rgb(255, 255, 255);
+  padding: 20px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+.container_connexion > form {
+  display: flex;
+  flex-direction: column;
+}
+
+.container_connexion > form > input {
+  border: solid 1.5px rgb(215, 215, 215);
+  color: rgb(0, 0, 0);
+  width: 100%;
+  height: 50px;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+.container_connexion > form > input::placeholder {
+  color: rgb(200, 200, 200);
+}
+
+.container_connexion > form > input:focus::placeholder {
+  color: rgb(25, 115, 250);
+}
+
+.container_connexion > hr {
+  height: 1.5px;
+  background: rgb(215, 215, 215);
+}
+
+.container_connexion > a {
+  width: fit-content;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  color: rgb(210, 210, 210);
+}
+
+/* SECTION REGISTER : */
+#filter_container {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 1;
+}
+
+#container_register {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: none;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
+  background: rgb(255, 255, 255);
+  width: 520px;
+  border-radius: 8px;
+  z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+#container_register > .card-title {
+  padding: 20px;
+}
+
+#container_register > .card-title > .title {
+  font-family: Arial, sans-serif;
+  font-size: 32px;
+}
+
+#container_register > .card-title > .text {
+  font-family: Arial, sans-serif;
+  color: rgb(110, 110, 110);
+}
+
+#container_register > hr {
+  height: 1.5px;
+  background: rgb(215, 215, 215);
+}
+
+#container_register > form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  padding: 20px;
+}
+
+#container_register > form > p {
+  font-size: 14px;
+}
+
+#container_register > form > input {
+  color: rgb(0, 0, 0);
+}
+
+#container_register > form > .card_name {
+  display: flex;
+  column-gap: 10px;
+}
+
+#container_register > form > .card_name > input[type="text"] {
+  border: solid 1.5px rgb(215, 215, 215);
+  background: rgb(245, 245, 250);
+  color: rgb(200, 200, 200);
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+#container_register
+  > form
+  > .card_name
+  > input[type="text"]:focus::placeholder {
+  color: rgb(25, 115, 250);
+}
+
+.tag_birth {
+  display: flex;
+  flex-direction: column;
+}
+
+.tag_birth > label {
+  color: rgb(110, 110, 110);
+}
+
+#container_register > form > .tag_birth > input[type="date"] {
+  border: solid 1.5px rgb(215, 215, 215);
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+#container_register
+  > form
+  > .tag_birth
+  > input[type="date"]::-webkit-datetime-edit-day-field:focus,
+#container_register
+  > form
+  > .tag_birth
+  > input[type="date"]::-webkit-datetime-edit-month-field:focus,
+#container_register
+  > form
+  > .tag_birth
+  > input[type="date"]::-webkit-datetime-edit-year-field:focus {
+  background: rgb(25, 115, 250);
+}
+
+#container_register > form > .card_gender {
+  display: flex;
+  flex-direction: column;
+}
+
+.question_gender {
+  color: rgb(110, 110, 110);
+}
+
+.container_tag_gender {
+  display: flex;
+  column-gap: 10px;
+}
+
+.container_tag_gender > .tag_gender {
+  border: solid 1.5px rgb(215, 215, 215);
+  width: 100%;
+  height: 40px;
+  font-size: 16px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container_tag_gender > .tag_gender > label {
+  font-family: Arial, sans-serif;
+  flex: 1;
+  padding: 8px;
+}
+
+.container_tag_gender > .tag_gender > input[type="radio"] {
+  margin-right: 8px;
+}
+
+#container_register > form > input[type="text"],
+input[type="email"],
+input[type="password"] {
+  border: solid 1.5px rgb(215, 215, 215);
+  color: rgb(200, 200, 200);
+  background: rgb(245, 245, 250);
+  width: 100%;
+  height: 40px;
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 8px;
+}
+
+#container_register > form > input[type="text"]:focus::placeholder {
+  color: rgb(25, 115, 250);
+}
+
+#container_register > form > input[type="password"]:focus::placeholder {
+  color: rgb(25, 115, 250);
+}
+
+#container_register > form > input[type="email"]:focus::placeholder {
+  color: rgb(25, 115, 250);
+}
+
+.general_condition {
+  padding: 4px 0px 0px;
+  color: rgb(110, 110, 110);
+}
+
+.general_condition > a {
+  color: rgb(1, 95, 205);
+}

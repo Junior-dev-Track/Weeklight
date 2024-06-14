@@ -4,34 +4,24 @@ namespace controllers;
 
 class Page
 {
-    public function home(): void
-    {
-        include __DIR__ . "/../views/home.php";
-    }
-
     public function login(): void
     {
-        include __DIR__ . "/../views/login.php";
+        include __DIR__ . "/../../public/views/login.php";
     }
 
-    public function logout(): void
+    public function home(): void
     {
-        include __DIR__ . "/../views/logout.php";
-    }
-
-    public function subscribe(): void
-    {
-        include __DIR__ . "/../views/subscribe.php";
+        include __DIR__ . "/../../public/views/home.php";
     }
 
     public function error_404(): void
     {
-        include __DIR__ . "/../views/404.php";
+        include __DIR__ . "/../../public/views/404.php";
     }
 
     public function error_500($error)
     {
-        include __DIR__ . "/../views/500.php";
+        include __DIR__ . "/../../public/views/500.php";
         $error;
     }
 }

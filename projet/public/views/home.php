@@ -5,8 +5,8 @@ use controllers\Session;
 
 $database = new Database();
 
-// $navigation = new Session();
-// $navigation->to_subscribe();
+$navigation = new Session();
+$navigation->to_subscribe();
 
 require_once "includes/header.php" ?>
 
