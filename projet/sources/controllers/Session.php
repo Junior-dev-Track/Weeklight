@@ -7,7 +7,7 @@ use controllers\Subscribe;
 
 class Session
 {
-    public function to_subscribe()
+    public function subscribe()
     {
         session_start();
 
@@ -25,7 +25,7 @@ class Session
         }
     }
 
-    public function to_login()
+    public function login()
     {
         session_start();
 

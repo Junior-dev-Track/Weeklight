@@ -1,18 +1,12 @@
 <?php
 
-use models\Database;
 use controllers\Session;
 
-$database = new Database();
+$connection = new Session();
+$connection->login();
 
-$navigation = new Session();
-$navigation->to_subscribe();
-
-require_once "includes/header.php" ?>
-
-<main>
-    <h1>Page Home</h1>
-    <?php echo $database->get_all_hikes() ?>
-</main>
-
-<?php require_once "includes/footer.php" ?>
+if (isset($_SESSION["user"])) {
+    require_once __DIR__ . "/components/home.php";
+} else {
+    require_once __DIR__ . "/components/login.php";
+}

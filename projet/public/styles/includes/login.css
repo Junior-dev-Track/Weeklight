@@ -1,11 +1,11 @@
 /* MAIN LOGIN : */
-.login {
+.component_login {
   padding-top: 3%;
   width: 100%;
   position: absolute;
 }
 
-.login > .container_login {
+.component_login > .container_login {
   margin: auto;
   width: 80%;
   display: flex;

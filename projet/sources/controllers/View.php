@@ -2,16 +2,16 @@
 
 namespace controllers;
 
-class Page
+class View
 {
-    public function login(): void
-    {
-        include __DIR__ . "/../../public/views/login.php";
-    }
-
     public function home(): void
     {
         include __DIR__ . "/../../public/views/home.php";
+    }
+
+    public function forgot_password(): void
+    {
+        include __DIR__ . "/../../public/views/forgot-password.php";
     }
 
     public function error_404(): void
