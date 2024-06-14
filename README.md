@@ -9,7 +9,6 @@ Dans le projet, nous sommes 3 personnes :
 - Julien Tilman (Front-End) [Lien GitHub](https://github.com/JulienTilman)
 - Marc Romero (Full-Stack) [Lien GitHub](https://github.com/webduckdodgers)
 - Denis (Full-Stack)
-  z
 
 ## Nom de l'application : Weeklight
 
@@ -83,6 +82,8 @@ Nous voulons faire quelque chose de marquant et bien différent, c'est pourquoi 
 - **Gris clair** : Crée une toile de fond apaisante et élégante, permettant de se concentrer sur le contenu.
 
 ### Structute des quelques idées de page :
+
+[Lien Figma pour + d'info](https://www.figma.com/design/q8jWxA0GoBsltovgIVZkEK/Test?node-id=0-1&t=oEICWtAG03RsTUdj-0)
 
 #### Page Index
 
