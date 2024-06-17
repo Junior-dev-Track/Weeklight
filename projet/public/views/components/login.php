@@ -20,7 +20,7 @@
       </section>
       <section class="connexion">
         <div class="container_connexion">
-          <form method="post">
+          <form method="POST">
             <input type="email" name="email" placeholder="Email" required /><br />
             <input type="password" name="password" placeholder="Mot de passe" required /><br />
             <button type="submit" id="button_connexion_account">
@@ -43,7 +43,7 @@
         <p class="text">C'est rapide et simple.</p>
       </div>
       <hr />
-      <form method="post">
+      <form action="/" method="POST">
         <div class="card_name">
           <input type="text" name="first_name" placeholder="Prénom" required />
           <input type="text" name="last_name" placeholder="Nom" required />
@@ -57,11 +57,11 @@
           <div class="container_tag_gender">
             <div class="tag_gender">
               <label for="gender_woman">Femme</label>
-              <input type="radio" id="gender_woman" name="gender_person" value="gender_woman" />
+              <input type="radio" id="gender_woman" name="gender" value="woman" />
             </div>
             <div class="tag_gender">
               <label for="gender_man">Homme</label>
-              <input type="radio" id="gender_man" name="gender_person" value="gender_man" />
+              <input type="radio" id="gender_man" name="gender" value="man" />
             </div>
           </div>
         </div>
@@ -83,7 +83,7 @@
           vous pouvez à tout moment vous désabonner.
         </p>
 
-        <button type="submit" id="button_register_account">S'inscrire</button>
+        <button type="submit" id="button_register_account" name="register">S'inscrire</button>
       </form>
     </section>
   </main>

@@ -30,8 +30,9 @@ class Login
             $user = $statement->fetch();
 
             if ($user && password_verify($password, $user['password'])) {
+                session_start();
                 $_SESSION["user"] = $user;
-                header('Location: http://localhost:3000/');
+                header('Location: /');
                 exit();
             } else {
                 return '<h1 class="error_message">Email ou mot de passe incorrect</h1>';

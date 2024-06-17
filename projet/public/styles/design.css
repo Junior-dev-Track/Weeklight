@@ -9,6 +9,18 @@
   text-shadow: rgb(175, 75, 170, 0.8) 0px 0px 30px;
 }
 
+.logo_nav_bar {
+  font-family: "Pacifico", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 24px;
+  color: rgb(175, 75, 170);
+  transition: 0.3s;
+}
+.logo_nav_bar:hover {
+  text-shadow: rgb(175, 75, 170, 0.8) 0px 0px 30px;
+}
+
 body {
   background: #eff2f5;
   font-family: "Bellota", system-ui;

@@ -3,22 +3,24 @@
 namespace controllers;
 
 use controllers\Login;
-use controllers\Subscribe;
+use models\Register;
 
 class Session
 {
-    public function subscribe()
+    public function register()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $firstName = $_POST["first_name"];
-            $lastName = $_POST["last_name"];
-            $nickName = $_POST["nick_name"];
-            $email = $_POST["email"];
-            $password = $_POST["password"];
 
-            $newUser = new Subscribe();
-            $result = $newUser->register($firstName, $lastName, $nickName, $email, $password);
+            $firstName = $_POST['first_name'];
+            $lastName = $_POST['last_name'];
+            $birth = $_POST['birth'];
+            $gender = $_POST['gender'];
+            $email = $_POST['email'];
+            $password = $_POST['password'];
 
+            $user = new Register();
+
+            $result = $user->register($firstName, $lastName, $birth, $gender, $email, $password);
             echo $result;
         }
     }
@@ -26,25 +28,23 @@ class Session
     public function login()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            $login = new Login();
-            $result = $login->authenticate($email, $password);
+            $user = new Login();
 
+            $result = $user->authenticate($email, $password);
             echo $result;
         }
     }
 
     public function logout()
     {
-        if (isset($_POST['logout'])) {
-            session_unset();
-            session_destroy();
-
-            header('Location: http://localhost:3000/');
-
-            exit();
-        }
+        session_start();
+        session_unset();
+        session_destroy();
+        header('Location: /');
+        exit();
     }
 }
