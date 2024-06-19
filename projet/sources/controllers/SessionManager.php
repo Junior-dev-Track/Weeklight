@@ -2,10 +2,10 @@
 
 namespace controllers;
 
-use controllers\Login;
-use models\Register;
+use models\RegisterNewUser;
+use models\LoginUser;
 
-class Session
+class SessionManager
 {
     public function register()
     {
@@ -18,7 +18,7 @@ class Session
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            $user = new Register();
+            $user = new RegisterNewUser();
 
             $result = $user->register($firstName, $lastName, $birth, $gender, $email, $password);
             echo $result;
@@ -32,7 +32,7 @@ class Session
             $email = $_POST['email'];
             $password = $_POST['password'];
 
-            $user = new Login();
+            $user = new LoginUser();
 
             $result = $user->authenticate($email, $password);
             echo $result;

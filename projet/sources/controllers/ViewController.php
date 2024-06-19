@@ -2,41 +2,51 @@
 
 namespace controllers;
 
-class View
+use models\GetUser;
+use Exception;
+
+class ViewController
 {
-    public function home(): void
+    public function home()
     {
         include __DIR__ . "/../../public/views/home.php";
     }
 
-    public function forgot_password(): void
+    public function forgotPassword()
     {
         include __DIR__ . "/../../public/views/forgot-password.php";
     }
 
-    public function friends(): void
+    public function friends()
     {
         include __DIR__ . "/../../public/views/friends.php";
     }
 
-    public function messages(): void
+    public function messages()
     {
         include __DIR__ . "/../../public/views/messages.php";
     }
 
-    public function profile(): void
+    public function profile($param)
     {
+        $getUser = new GetUser();
+        $search = $getUser->searchUser($param);
+        session_start();
+        if ($search) {
+            $_SESSION["search"] = $search;
+        } else {
+            $_SESSION["search"] = null;
+        }
         include __DIR__ . "/../../public/views/profile.php";
     }
 
-    public function error_404(): void
+    public function error404(): void
     {
         include __DIR__ . "/../../public/views/404.php";
     }
 
-    public function error_500($error)
+    public function error500(): void
     {
         include __DIR__ . "/../../public/views/500.php";
-        $error;
     }
 }

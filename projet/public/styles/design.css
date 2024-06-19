@@ -39,7 +39,7 @@ form {
 /* BUTTON CONNEXION ACCOUNT */
 #button_connexion_account {
   background: rgb(25, 115, 250);
-  color: #ffffff;
+  color: rgb(255, 255, 255);
   width: 100%;
   height: 50px;
   font-size: 20px;
@@ -83,7 +83,7 @@ form {
 /* BUTTON REGISTER ACCOUNT */
 #button_register_account {
   background: rgb(65, 185, 40);
-  color: #ffffff;
+  color: rgb(255, 255, 255);
   width: 40%;
   margin: 10px auto 0px;
   height: 40px;

@@ -2,29 +2,45 @@
 
 namespace router;
 
-use controllers\View;
+use controllers\ViewController;
 use Exception;
 
 class Root
 {
     public function path()
     {
-        $view = new View();
+        $page = new ViewController();
 
         try {
             $url = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), "/");
 
-            match ($url) {
-                ""                => $view->home(),
-                "forgot-password" => $view->forgot_password(),
-                "friends"         => $view->friends(),
-                "messages"        => $view->messages(),
-                "profile"         => $view->profile(),
+            switch ($url) {
+                case "":
+                    $page->home();
+                    break;
 
-                default           => $view->error_404(),
-            };
-        } catch (Exception $error) {
-            $view->error_500($error->getMessage());
+                case "forgot-password":
+                    $page->forgotPassword();
+                    break;
+
+                case "friends":
+                    $page->friends();
+                    break;
+
+                case "messages":
+                    $page->messages();
+                    break;
+
+                case strpos($url, "profile/") === 0:
+                    $page->profile(substr($url, 8));
+                    break;
+
+                default:
+                    $page->error404();
+                    break;
+            }
+        } catch (Exception $e) {
+            $page->error500();
         }
     }
 }

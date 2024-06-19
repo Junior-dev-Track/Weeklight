@@ -1,8 +1,6 @@
 <?php
-session_start();
 
-$firstName = $_SESSION["user"]["first_name"];
-$lastName = $_SESSION["user"]["last_name"];
+$firstName = $_SESSION["account"]["first_name"];
 ?>
 
 <!DOCTYPE html>
@@ -17,13 +15,17 @@ $lastName = $_SESSION["user"]["last_name"];
 </head>
 
 <body>
-    <?php include_once __DIR__ . "/components/header.php" ?>
+    <?php require_once __DIR__ . "/components/header.php"; ?>
 
-    <h2>Bienvenue <?php echo $firstName ?> <?php echo $lastName ?> !</h2>
+    <h1>Profil de l'utilisateur</h1>
+    <?php if (!isset($_SESSION["search"])) { ?>
+        <p>Aucun utilisateur trouvé.</p>
+    <?php } else { ?>
+        <?php echo var_dump($_SESSION["search"]) ?>;
 
-    <form action="/" method="POST">
-        <button type="submit" name="logout">Déconnecter</button>
-    </form>
+        <p>Nom: <?php echo $_SESSION["search"]['first_name']; ?></p>
+        <p>Email: <?php echo $_SESSION["search"]['email']; ?></p>
+    <?php } ?>
 </body>
 
 </html>

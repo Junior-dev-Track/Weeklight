@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+$firstName = $_SESSION["account"]["first_name"];
+$lastName = $_SESSION["account"]["last_name"];
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,7 +18,7 @@
 </head>
 
 <body>
-    <?php include_once __DIR__ . "/components/header.php" ?>
+    <?php require_once __DIR__ . "/components/header.php" ?>
 
     <main>
         <h2>Page Messages</h2>

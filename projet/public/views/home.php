@@ -1,25 +1,22 @@
 <?php
 
-use controllers\Session;
+use controllers\SessionManager;
 
 session_start();
-
-$session = new Session();
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
-    $session->logout();
-}
-
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email']) && isset($_POST['password'])) {
-    $session->login();
-}
+$session = new SessionManager();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
     $session->register();
-}
-
-if (isset($_SESSION["user"])) {
+} else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['logout'])) {
+    $session->logout();
+} else if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['email']) && isset($_POST['password'])) {
+    $session->login();
+} else if (isset($_SESSION["account"])) {
     require_once __DIR__ . "/components/home.php";
 } else {
     require_once __DIR__ . "/components/login.php";
+    if (isset($_SESSION['message'])) {
+        echo '<span class="message">' . $_SESSION['message'] . '</span';
+        unset($_SESSION['message']);
+    }
 }

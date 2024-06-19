@@ -22,4 +22,18 @@ document.addEventListener("DOMContentLoaded", () => {
         "invert(42%) sepia(55%) saturate(983%) hue-rotate(258deg) brightness(80%) contrast(85%)";
       break;
   }
+
+  button_profile.addEventListener("click", () => {
+    container_profile.style.display = "flex";
+  });
+
+  document.addEventListener("click", (event) => {
+    const isClickInside =
+      container_profile.contains(event.target) ||
+      button_profile.contains(event.target);
+
+    if (!isClickInside) {
+      container_profile.style.display = "none";
+    }
+  });
 });

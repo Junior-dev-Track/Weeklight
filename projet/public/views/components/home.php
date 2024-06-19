@@ -1,3 +1,8 @@
+<?php
+$firstName = $_SESSION["account"]["first_name"];
+$lastName = $_SESSION["account"]["last_name"];
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -10,7 +15,7 @@
 </head>
 
 <body>
-  <?php include_once __DIR__ . "/header.php" ?>
+  <?php require_once __DIR__ . "/header.php" ?>
 
   <main>
     <h1>page home</h1>
