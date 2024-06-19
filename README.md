@@ -8,7 +8,6 @@ Dans le projet, nous sommes 3 personnes :
 
 - Julien Tilman (Front-End) [Lien GitHub](https://github.com/JulienTilman)
 - Marc Romero (Full-Stack) [Lien GitHub](https://github.com/webduckdodgers)
-- Denis (Full-Stack)
 
 ## Nom de l'application : Weeklight
 
