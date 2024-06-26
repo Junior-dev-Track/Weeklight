@@ -2,19 +2,19 @@
 
 namespace controllers;
 
-use models\GetUser;
-use Exception;
+use models\Search;
 
 class ViewController
 {
     public function home()
     {
+
         include __DIR__ . "/../../public/views/home.php";
     }
 
     public function forgotPassword()
     {
-        include __DIR__ . "/../../public/views/forgot-password.php";
+        include __DIR__ . "/../../public/views/forgot_password.php";
     }
 
     public function friends()
@@ -27,16 +27,11 @@ class ViewController
         include __DIR__ . "/../../public/views/messages.php";
     }
 
-    public function profile($param)
+    public function profile($path)
     {
-        $getUser = new GetUser();
-        $search = $getUser->searchUser($param);
         session_start();
-        if ($search) {
-            $_SESSION["search"] = $search;
-        } else {
-            $_SESSION["search"] = null;
-        }
+        $search = new Search();
+        $_SESSION["search"] = $search->user($path);
         include __DIR__ . "/../../public/views/profile.php";
     }
 

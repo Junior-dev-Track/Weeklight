@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="./../styles/import.css" />
 </head>
 
+<?php require_once __DIR__ . "/components/navbar_login.php" ?>
+
 <body>
-    <h1>coucou</h1>
+    <h1>Recuperer votre mot de passe</h1>
 </body>
 
 </html>

@@ -7,12 +7,16 @@ use Exception;
 
 class Root
 {
-    public function path()
+    public function __construct()
     {
         $page = new ViewController();
 
         try {
             $url = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), "/");
+
+            if (strpos($url, ".php") === true) {
+                return $page->error404();
+            }
 
             switch ($url) {
                 case "":
@@ -31,15 +35,11 @@ class Root
                     $page->messages();
                     break;
 
-                case strpos($url, "profile/") === 0:
-                    $page->profile(substr($url, 8));
-                    break;
-
                 default:
-                    $page->error404();
+                    $page->profile($url);
                     break;
             }
-        } catch (Exception $e) {
+        } catch (Exception $error) {
             $page->error500();
         }
     }
