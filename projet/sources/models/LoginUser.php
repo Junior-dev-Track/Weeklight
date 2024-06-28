@@ -20,35 +20,40 @@ class LoginUser
 
     public function authenticate($email, $password)
     {
-        session_start();
-
-        if (empty($email) || empty($password)) {
-            $_SESSION['message'] = "Veuillez remplir tous les champs";
-            header('Location: /');
-            exit;
-        }
-
         try {
-            $sql = "SELECT * FROM account WHERE email = :email LIMIT 1";
+            $sql = "SELECT * FROM users WHERE email = :email LIMIT 1";
             $query = $this->database->pdo->prepare($sql);
             $query->bindParam(':email', $email, \PDO::PARAM_STR);
             $query->execute();
             $account = $query->fetch(\PDO::FETCH_ASSOC);
 
-            if ($account && password_verify($password, $account['password'])) {
-                if ($this->tokenManager->addToken($email)) {
-                    $token = $this->tokenManager->getToken($email);
-                    setcookie("token", $token, time() + 60 * 2);
-                    $_SESSION["account"] = $account;
-                    header('Location: /');
-                    exit;
+            session_start();
+            if ($account) {
+                if ($account['account'] == 1) {
+                    if (password_verify($password, $account['password'])) {
+                        if ($this->tokenManager->addToken($email)) {
+                            $token = $this->tokenManager->getToken($email);
+                            setcookie("token", $token, time() + 60 * 2);
+                            $_SESSION["account"] = $account;
+                            header('Location: /');
+                            exit;
+                        } else {
+                            $_SESSION['message'] = "Oups!<br>Il y a eu une leger soucis..<br>Veillez réessayer de vous réconnecter";
+                            header('Location: /');
+                            exit;
+                        }
+                    } else {
+                        $_SESSION['message'] = 'Erreur! 🧐<br>Email ou mot de passe incorrect';
+                        header('Location: /');
+                        exit;
+                    }
                 } else {
-                    $_SESSION['message'] = 'Erreur lors de la génération du token';
+                    $_SESSION['message'] = 'Votre compte n\'est pas encore activé<br>Veuillez vérifier votre boîte mail pour activer votre compte Weeklight';
                     header('Location: /');
                     exit;
                 }
             } else {
-                $_SESSION['message'] = 'Email ou mot de passe incorrect';
+                $_SESSION['message'] = "Ooh!<br>Vous n'avez pas de compte Weeklight<br>Vous pouvez créer un en moins d'une minute ⏱️<br>en appuyant sur le bouton 'Créer un compte'";
                 header('Location: /');
                 exit;
             }

@@ -3,10 +3,6 @@
 use models\TokenManager;
 use controllers\SessionManager;
 
-$firstName = $_SESSION["account"]["first_name"] ?? null;
-$lastName = $_SESSION["account"]["last_name"] ?? null;
-$nickName = $_SESSION["account"]["nick_name"] ?? null;
-
 $token = $_COOKIE["token"] ?? null;
 $account = null;
 
@@ -48,6 +44,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else { ?>
         <main>
             <h1>Profil <?php echo ($_SESSION["search"]["first_name"]); ?></h1>
+
             <pre>
                 <?php echo (var_export($_SESSION["search"], true)); ?>
             </pre>

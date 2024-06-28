@@ -2,13 +2,12 @@
 
 namespace controllers;
 
-use models\Search;
+use models\SearchUser;
 
 class ViewController
 {
     public function home()
     {
-
         include __DIR__ . "/../../public/views/home.php";
     }
 
@@ -30,8 +29,8 @@ class ViewController
     public function profile($path)
     {
         session_start();
-        $search = new Search();
-        $_SESSION["search"] = $search->user($path);
+        $user = new SearchUser();
+        $_SESSION["search"] = $user->profile($path);
         include __DIR__ . "/../../public/views/profile.php";
     }
 

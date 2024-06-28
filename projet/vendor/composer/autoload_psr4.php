@@ -9,4 +9,7 @@ return array(
     'router\\' => array($baseDir . '/sources/router'),
     'models\\' => array($baseDir . '/sources/models'),
     'controllers\\' => array($baseDir . '/sources/controllers'),
+    'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
+    'Symfony\\Component\\VarDumper\\' => array($vendorDir . '/symfony/var-dumper'),
+    'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
 );

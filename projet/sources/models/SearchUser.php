@@ -5,7 +5,7 @@ namespace models;
 use models\Database;
 use PDOException;
 
-class Search
+class SearchUser
 {
     private $database;
 
@@ -14,9 +14,9 @@ class Search
         $this->database = new Database();
     }
 
-    public function user(string $nickName): ?array
+    public function profile(string $nickName): ?array
     {
-        $sql = "SELECT first_name, last_name, birth, gender, email FROM account WHERE nick_name = :nickName LIMIT 1";
+        $sql = "SELECT first_name, last_name, birth, gender, email FROM users WHERE nick_name = :nickName LIMIT 1";
 
         $query = $this->database->pdo->prepare($sql);
 

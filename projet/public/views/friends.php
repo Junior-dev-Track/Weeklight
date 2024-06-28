@@ -4,11 +4,6 @@ use models\TokenManager;
 use controllers\SessionManager;
 
 session_start();
-
-$firstName = $_SESSION["account"]["first_name"];
-$lastName = $_SESSION["account"]["last_name"];
-$nickName = $_SESSION["account"]["nick_name"];
-
 $token = isset($_COOKIE["token"]) ? $_COOKIE["token"] : null;
 $account = null;
 

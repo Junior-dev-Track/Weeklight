@@ -2,6 +2,8 @@
 
 namespace models;
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 use models\Database;
 use PDOException;
 
@@ -21,8 +23,10 @@ class RegisterNewUser
         $lastTwoDigitsYear = substr(date('Y', strtotime($birth)), -2);
         $nickName = strtolower($firstName . $lastName . $lastTwoDigitsYear);
 
-        $sql = "INSERT INTO account (first_name, last_name, nick_name, birth, gender, email, password)
-                VALUES (:firstName, :lastName, :nickName, :birth, :gender, :email, :password)";
+        $token = bin2hex(random_bytes(32));
+
+        $sql = "INSERT INTO users (first_name, last_name, nick_name, birth, gender, email, password, token)
+                VALUES (:firstName, :lastName, :nickName, :birth, :gender, :email, :password, :token)";
 
         $query = $this->database->pdo->prepare($sql);
 
@@ -36,16 +40,53 @@ class RegisterNewUser
             $query->bindParam(':gender', $gender);
             $query->bindParam(':email', $email);
             $query->bindParam(':password', $password_hash);
+            $query->bindParam(':token', $token);
             $query->execute();
 
-            $_SESSION['message'] = "Bien joué !<br>Tu t'es bien inscrit sur Weeklight.<br>Maintenant, il te reste seulement à vérifier ta boîte mail pour activer ton compte.";
+            $this->confirmationEmail($email, $token);
+
+            $_SESSION['message'] = "Bien joué ! 🎉<br>Tu t'es bien inscrit sur Weeklight.<br>Maintenant, il te reste seulement à vérifier ta boîte mail pour activer ton compte.";
             header('Location: /');
             exit;
         } catch (PDOException $error) {
-            $_SESSION['message'] = "Inscription échouée.";
+            $_SESSION['message'] = "<h1>Inscription échouée.</h1>";
             $_SESSION['error'] = $error->getMessage();
             header('Location: /');
             exit;
+        }
+    }
+
+    private function confirmationEmail($email, $token)
+    {
+        $mail = new PHPMailer(true);
+
+        try {
+            $mail->isSMTP();
+            $mail->Host       = 'smtp.gmail.com';
+            $mail->SMTPAuth   = true;
+            $mail->Username   = 'weeklight.company@gmail.com';
+            $mail->Password   = 'mzqz ajal asqp ycxn';
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port       = 587;
+
+            $confirmationURL = "http://localhost:3000/?token=$token";
+
+            // Destinataires
+            $mail->setFrom('weeklight.company@gmail.com', 'Weeklight');
+            $mail->addAddress($email);
+
+            // Contenu de l'email
+            $mail->isHTML(true);
+            $mail->Subject = 'Nouveau compte';
+            $mail->Body    = "
+                <h1>Bienvenue sur Weeklight ! 😊</h1>
+                <p>Merci de vous être inscrit. <br>Veuillez cliquer sur le bouton ci-dessous pour confirmer votre adresse email.</p>
+                <a href=\"$confirmationURL\" style=\"background-color: #4CAF50; color: white; padding: 10px 20px; text-align: center; text-decoration: none; display: inline-block; border-radius: 5px;\">Confirmer votre email</a>
+            ";
+            $mail->AltBody = 'Merci de vous être inscrit. Veuillez confirmer votre adresse email en cliquant sur le lien suivant : ' . $confirmationURL;
+            $mail->send();
+        } catch (Exception $error) {
+            error_log("Le message n'a pas pu être envoyé. Erreur de Mailer : {$mail->ErrorInfo}");
         }
     }
 }

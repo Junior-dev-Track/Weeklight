@@ -14,7 +14,8 @@ class Root
         try {
             $url = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), "/");
 
-            if (strpos($url, ".php") === true) {
+            // Check if the URL contains a .php file, which should not be the case
+            if (strpos($url, ".php") !== false) {
                 return $page->error404();
             }
 
@@ -24,7 +25,12 @@ class Root
                     break;
 
                 case "forgot-password":
-                    $page->forgotPassword();
+                    if (isset($_GET['new_password_user'])) {
+                        $email = urldecode($_GET['new_password_user']);
+                        $page->forgotPassword($email);
+                    } else {
+                        $page->forgotPassword(null);
+                    }
                     break;
 
                 case "friends":

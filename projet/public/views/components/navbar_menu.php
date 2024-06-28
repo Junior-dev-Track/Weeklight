@@ -34,9 +34,9 @@
 </header>
 
 <div id="container_profile">
-	<a href="/<?php echo $nickName ?>">
+	<a href="/<?php echo $_SESSION["account"]["nick_name"] ?>">
 		<img src="./../../assets/svgs/user.svg" alt="lien profil">
-		<?php echo $firstName . " " . $lastName ?>
+		<?php echo $_SESSION["account"]["first_name"] . " " . $_SESSION["account"]["last_name"] ?>
 	</a>
 
 	<a href="/settings"><img src="./../../assets/svgs/settings.svg" alt="lien paramètre">Paramètres</a>

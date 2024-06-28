@@ -1,9 +1,3 @@
-<?php
-$firstName = $_SESSION["account"]["first_name"];
-$lastName = $_SESSION["account"]["last_name"];
-$nickName = $_SESSION["account"]["nick_name"];
-?>
-
 <!DOCTYPE html>
 <html lang="fr">
 

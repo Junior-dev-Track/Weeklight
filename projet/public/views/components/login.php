@@ -22,9 +22,7 @@
           <form method="POST">
             <input type="email" name="email" placeholder="Email" required /><br />
             <input type="password" name="password" placeholder="Mot de passe" required /><br />
-            <button type="submit" id="button_connexion_account">
-              Se connecter
-            </button>
+            <button type="submit" id="button_connexion_account">Se connecter</button>
           </form>
           <a href="forgot-password">Mot de passe oublié ?</a>
           <hr />
