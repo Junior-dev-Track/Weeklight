@@ -1,6 +1,22 @@
 @import "./reset.css";
-@import "./design.css";
 
-@import "./includes/message.css";
-@import "./includes/header.css";
-@import "./includes/login.css";
+/* DESIGN SITE*/
+@import "./design.css";
+@import "./header.css";
+
+/* DESIGN BUTTONS */
+@import "./includes/button_close_register.css";
+@import "./includes/button_connection_account.css";
+@import "./includes/button_profile.css";
+@import "./includes/button_register_account.css";
+@import "./includes/button_view_register.css";
+
+/* DESIGN REMINDER MESSAGES */
+@import "./includes/reminder_message.css";
+
+/* DESIGN NAVBAR */
+@import "./includes/navbar_login.css";
+@import "./includes/navbar_menu.css";
+
+/* DESIGN PAGES */
+@import "./includes/page_login.css";

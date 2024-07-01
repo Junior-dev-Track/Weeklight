@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <?php
     } ?>
 
-    <script defer src="./../assets/scripts/header.js"></script>
+    <script defer src="./../assets/scripts/navbar_menu.js"></script>
 </body>
 
 </html>

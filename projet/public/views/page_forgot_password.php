@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./../../assets/styles/import.css" />
     <?php if (!isset($_GET['token'])) { ?>
-        <title>Weeklight - Mot de passe oublié</title>
+        <title>Mot de passe oublié | Connexion</title>
     <?php } else { ?>
-        <title>Weeklight - Réinitialiser mon mot de passe</title>
+        <title>Réinitialiser mot de passe</title>
     <?php } ?>
 </head>
 

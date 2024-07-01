@@ -21,9 +21,9 @@ class NewPasswordUser
         $token = bin2hex(random_bytes(32));
         $expires = date("U") + 1800; // Le token expire dans 30 minutes
 
-        // Mettre à jour le token et l'expiration dans la table users
         $sql = "UPDATE users SET reset_token = :token, reset_token_expires = :expires WHERE email = :email";
         $query = $this->database->pdo->prepare($sql);
+
         try {
             $query->bindParam(':token', $token);
             $query->bindParam(':expires', $expires);

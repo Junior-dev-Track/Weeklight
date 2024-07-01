@@ -34,7 +34,12 @@ class SessionManager
     {
         $newPasswordUser = new NewPasswordUser();
         $newPasswordUser->sendMail($email);
-        return $_SESSION['message'] = "Un mail vient d'être envoyé à votre boîte mail pour changer votre mot de passe.";
+        $_SESSION['message'] = '
+        <span class="message_alert">
+            <strong>👍 Un email vient d\'être envoyé.</strong>
+            <p>À votre boîte mail pour changer votre mot de passe<p>
+        </span>';
+        return $_SESSION['message'];
     }
 
     public function logout()

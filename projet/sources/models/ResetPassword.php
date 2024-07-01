@@ -25,9 +25,9 @@ class ResetPassword
             $query->execute();
             $user = $query->fetch(\PDO::FETCH_ASSOC);
 
+            session_start();
             if ($user) {
                 $email = $user['email'];
-
                 $passwordHash = password_hash($newPassword, PASSWORD_DEFAULT);
                 $updateSql = "UPDATE users SET password = :password, reset_token = NULL, reset_token_expires = NULL WHERE email = :email";
                 $updateQuery = $this->database->pdo->prepare($updateSql);
@@ -35,18 +35,23 @@ class ResetPassword
                 $updateQuery->bindParam(':email', $email);
                 $updateQuery->execute();
 
-                session_start();
-                $_SESSION['message'] = "Votre mot de passe a été réinitialisé avec succès.";
+                $_SESSION['message'] = '
+                <span class="message_validate">
+                    <strong>✅ Bien joué !</strong>
+                    <p>Votre mot de passe a été réinitialisé avec succès<p>
+                </span>';
                 header('Location: /');
                 exit;
             } else {
-                session_start();
-                $_SESSION['message'] = "Le lien de réinitialisation est invalide ou a expiré.";
+                $_SESSION['message'] = '
+                <span class="message_error">
+                    <strong>❌ Erreur !</strong>
+                    <p>Le lien de réinitialisation est invalide ou a expiré<p>
+                </span>';
                 header('Location: /');
                 exit;
             }
         } catch (PDOException $error) {
-            error_log("Erreur de base de données : {$error->getMessage()}");
             header('Location: /');
             exit;
         }

@@ -25,10 +25,11 @@
 .about > .text {
   text-align: center;
   font-size: 24px;
+  font-weight: 100;
 }
 
-/* SECTION CONNEXION : */
-.container_connexion {
+/* SECTION CONNECTION */
+.container_connection {
   position: relative;
   background: rgb(255, 255, 255);
   padding: 20px;
@@ -41,12 +42,12 @@
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
 }
 
-.container_connexion > form {
+.container_connection > form {
   display: flex;
   flex-direction: column;
 }
 
-.container_connexion > form > input {
+.container_connection > form > input {
   border: solid 1.5px rgb(215, 215, 215);
   color: rgb(0, 0, 0);
   width: 100%;
@@ -56,20 +57,20 @@
   border-radius: 8px;
 }
 
-.container_connexion > form > input::placeholder {
+.container_connection > form > input::placeholder {
   color: rgb(200, 200, 200);
 }
 
-.container_connexion > form > input:focus::placeholder {
+.container_connection > form > input:focus::placeholder {
   color: rgb(25, 115, 250);
 }
 
-.container_connexion > hr {
+.container_connection > hr {
   height: 1.5px;
   background: rgb(215, 215, 215);
 }
 
-.container_connexion > a {
+.container_connection > a {
   width: fit-content;
   margin: auto;
   font-family: Arial, sans-serif;

@@ -1,0 +1,9 @@
+/*
+ * DESIGN NAVBAR LOGIN
+ */
+
+header > nav > .form_login {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+}

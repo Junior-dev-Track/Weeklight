@@ -23,7 +23,13 @@ class Database
             $this->pdo = new PDO($this->database, $this->login, $this->password);
             $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException) {
-            header(__DIR__ . "/../../public/views/500.php");
+            session_start();
+            $_SESSION['message'] = '
+                        <span class="message_error">
+                            <strong>❌ Erreur 500</strong>
+                            <p>Erreur interne du serveur<p>
+                        </span>';
+            header('Location: /');
             exit;
         }
     }

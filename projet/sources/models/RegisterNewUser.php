@@ -45,12 +45,19 @@ class RegisterNewUser
 
             $this->confirmationEmail($email, $token);
 
-            $_SESSION['message'] = "Bien joué ! 🎉<br>Tu t'es bien inscrit sur Weeklight.<br>Maintenant, il te reste seulement à vérifier ta boîte mail pour activer ton compte.";
+            $_SESSION['message'] = '
+            <span class="message_validate">
+                <strong>✅ Bien joué ! Tu es bien inscrit sur Weeklight.</strong>
+                <p>Maintenant, il te reste seulement à activer ton compte via ta boîte mail<p>
+            </span>';
             header('Location: /');
             exit;
         } catch (PDOException $error) {
-            $_SESSION['message'] = "<h1>Inscription échouée.</h1>";
-            $_SESSION['error'] = $error->getMessage();
+            $_SESSION['message'] = '
+            <span class="message_error">
+                <strong>❌ Erreur !</strong>
+                <p>Inscription échouée<p>
+            </span>';
             header('Location: /');
             exit;
         }
@@ -86,7 +93,13 @@ class RegisterNewUser
             $mail->AltBody = 'Merci de vous être inscrit. Veuillez confirmer votre adresse email en cliquant sur le lien suivant : ' . $confirmationURL;
             $mail->send();
         } catch (Exception $error) {
-            error_log("Le message n'a pas pu être envoyé. Erreur de Mailer : {$mail->ErrorInfo}");
+            $_SESSION['message'] = '
+            <span class="message_error">
+                <strong>❌ Erreur !</strong>
+                <p>Le message n\'a pas pu être envoyé<p>
+            </span>';
+            header('Location: /');
+            exit;
         }
     }
 }

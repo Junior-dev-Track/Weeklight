@@ -9,13 +9,13 @@
 </head>
 
 <body>
-  <?php require_once __DIR__ . "/navbar_menu.php" ?>
+  <?php require_once __DIR__ . "/components/navbar_menu.php" ?>
 
   <main>
     <h1>page home</h1>
   </main>
 
-  <script defer src="./../../assets/scripts/header.js"></script>
+  <script defer src="./../assets/scripts/navbar_menu.js"></script>
 </body>
 
 </html>

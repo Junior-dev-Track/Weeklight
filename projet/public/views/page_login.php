@@ -12,17 +12,17 @@
   <main class="component_login">
     <div class="container_login">
       <section class="about">
-        <h1 class="title logo">-- Weeklight --</h1>
+        <h1 class="title logo">Weeklight</h1>
         <p class="text">
           Partagez, aimez et rappelez-vous<br /><strong>des moments qui comptent vraiment pour vous</strong>
         </p>
       </section>
-      <section class="connexion">
-        <div class="container_connexion">
+      <section class="connection">
+        <div class="container_connection">
           <form method="POST">
             <input type="email" name="email" placeholder="Email" required /><br />
             <input type="password" name="password" placeholder="Mot de passe" required /><br />
-            <button type="submit" id="button_connexion_account">Se connecter</button>
+            <button type="submit" id="button_connection_account">Se connecter</button>
           </form>
           <a href="forgot-password">Mot de passe oublié ?</a>
           <hr />
@@ -85,7 +85,7 @@
     </section>
   </main>
 
-  <script defer src="./../../assets/scripts/button-register.js"></script>
+  <script defer src="./../../assets/scripts/button_register.js"></script>
 </body>
 
 </html>

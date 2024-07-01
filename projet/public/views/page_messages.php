@@ -32,7 +32,7 @@ if (!$account) {
             <h2>Page Messages</h2>
         </main>
 
-        <script defer src="./../assets/scripts/header.js"></script>
+        <script defer src="./../assets/scripts/navbar_menu.js"></script>
     </body>
 
     </html>
