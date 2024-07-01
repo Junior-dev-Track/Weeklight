@@ -10,15 +10,8 @@ class SessionManager
 {
     public function register()
     {
-        $firstName = $_POST['first_name'];
-        $lastName = $_POST['last_name'];
-        $birth = $_POST['birth'];
-        $gender = $_POST['gender'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
         $registerNewUser = new RegisterNewUser();
-        return $registerNewUser->register($firstName, $lastName, $birth, $gender, $email, $password);
+        return $registerNewUser->register($_POST['first_name'], $_POST['last_name'], $_POST['birth'], $_POST['gender'], $_POST['email'], $_POST['password']);
     }
 
     public function login()

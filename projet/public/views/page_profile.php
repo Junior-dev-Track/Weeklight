@@ -30,10 +30,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <body>
     <?php
-    if (!$account) {
-        require_once __DIR__ . "/components/navbar_login.php";
-    } else {
+    if ($account) {
         require_once __DIR__ . "/components/navbar_menu.php";
+    } else {
+        require_once __DIR__ . "/components/navbar_login.php";
     }
 
     if (empty($_SESSION["search"])) { ?>

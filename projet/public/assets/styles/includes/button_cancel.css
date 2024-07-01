@@ -1,0 +1,11 @@
+/*
+ * DESIGN BUTTON CANCEL
+ */
+.button_cancel {
+  color: rgb(110, 110, 110);
+  font-size: 20px;
+  transition: 0.6s;
+}
+.button_cancel:hover {
+  scale: 1.05;
+}

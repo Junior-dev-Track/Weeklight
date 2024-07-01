@@ -27,7 +27,7 @@ class LoginUser
         session_start();
 
         if ($account) {
-            if ($account['account'] == 1) {
+            if ($account['account'] === 1) {
                 if (password_verify($password, $account['password'])) {
                     if ($this->tokenManager->addToken($email)) {
                         $token = $this->tokenManager->getToken($email);
@@ -38,7 +38,7 @@ class LoginUser
                     } else {
                         $_SESSION['message'] = '
                         <span class="message_alert">
-                            <strong>😮 Il y a eu une leger soucis..</strong>
+                            <strong>😮 Il y a eu une leger soucis</strong>
                             <p>Veillez réessayer de vous réconnecter<p>
                         </span>';
                         header('Location: /');

@@ -56,19 +56,19 @@ class NewPasswordUser
 
             $_SESSION['message'] = '
             <span class="message_alert">
-                <strong>🙃 Un email vient d\'être envoyé.</strong>
+                <strong>🙃 Un email vient d\'être envoyé</strong>
                 <p>Allez dans votre boîte mail pour changer votre mot de passe<p>
             </span>';
 
-            header('Location: /');
+            header('Location: /forgot-password');
             exit;
         } catch (Exception $error) {
             $_SESSION['message'] = '
-            <span class="message_alert">
+            <span class="message_error">
                 <strong>❌ Erreur !</strong>
                 <p>Le message n\'a pas pu être envoyé<p>
             </span>';
-            header('Location: /');
+            header('Location: /forgot-password');
             exit;
         }
     }

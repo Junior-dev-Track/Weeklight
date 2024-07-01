@@ -38,7 +38,7 @@ class ResetPassword
 
                 $_SESSION['message'] = '
                 <span class="message_validate">
-                    <strong>✅ Bien joué !</strong>
+                    <strong>✅ Bien joué</strong>
                     <p>Votre mot de passe a été réinitialisé avec succès<p>
                 </span>';
                 header('Location: /');
@@ -46,7 +46,7 @@ class ResetPassword
             } else {
                 $_SESSION['message'] = '
                 <span class="message_alert">
-                    <strong>😔 Zute !</strong>
+                    <strong>😔 Zute</strong>
                     <p>Le lien de réinitialisation est invalide ou a expiré<p>
                 </span>';
                 header('Location: /');

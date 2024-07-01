@@ -56,10 +56,10 @@ class ViewController
 
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             switch (true) {
-                case isset($_GET['new_password_user']):
-                    $email = urldecode($_GET['new_password_user']);
-                    $session->forgotPassword($email);
-                    break;
+                    // case isset($_GET['new_password_user']):
+                    //     $email = urldecode($_GET['new_password_user']);
+                    //     $session->forgotPassword($email);
+                    //     break;
 
                 case isset($_GET['token']):
                     $tokenManager = new TokenManager();
@@ -95,7 +95,22 @@ class ViewController
 
     public function forgotPassword()
     {
+        session_start();
+        $session = new SessionManager();
+
+        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
+            if (isset($_GET['email'])) {
+                $email = urldecode($_GET['email']);
+                $session->forgotPassword($email);
+            }
+        }
+
         include __DIR__ . "/../../public/views/page_forgot_password.php";
+
+        if (isset($_SESSION['message'])) {
+            echo $_SESSION['message'];
+            unset($_SESSION['message']);
+        }
     }
 
     public function friends()
@@ -113,6 +128,7 @@ class ViewController
         session_start();
         $user = new SearchUser();
         $_SESSION["search"] = $user->profile($path);
+
         include __DIR__ . "/../../public/views/page_profile.php";
     }
 
