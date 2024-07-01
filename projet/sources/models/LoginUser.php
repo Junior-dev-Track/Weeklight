@@ -38,7 +38,7 @@ class LoginUser
                     } else {
                         $_SESSION['message'] = '
                         <span class="message_alert">
-                            <strong>😕 Il y a eu une leger soucis.</strong>
+                            <strong>😮 Il y a eu une leger soucis..</strong>
                             <p>Veillez réessayer de vous réconnecter<p>
                         </span>';
                         header('Location: /');
@@ -46,8 +46,8 @@ class LoginUser
                     }
                 } else {
                     $_SESSION['message'] = '
-                        <span class="message_alert">
-                            <strong>😒 Attention !</strong>
+                        <span class="message_error">
+                            <strong>❌ Attention !</strong>
                             <p>Email ou mot de passe incorrect<p>
                         </span>';
                     header('Location: /');
@@ -66,7 +66,7 @@ class LoginUser
             $_SESSION['message'] = '
             <span class="message_alert">
                 <strong>🫢 Ooh !</strong>
-                <p>Vous n\'avez pas créer un compte Weeklight ?<p>
+                <p>Vous n\'avez pas créer un compte Weeklight<p>
             </span>';
             header('Location: /');
             exit;

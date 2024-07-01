@@ -23,6 +23,7 @@ class ResetPassword
             $query->bindParam(':token', $token);
             $query->bindParam(':now', $now);
             $query->execute();
+
             $user = $query->fetch(\PDO::FETCH_ASSOC);
 
             session_start();
@@ -44,14 +45,19 @@ class ResetPassword
                 exit;
             } else {
                 $_SESSION['message'] = '
-                <span class="message_error">
-                    <strong>❌ Erreur !</strong>
+                <span class="message_alert">
+                    <strong>😔 Zute !</strong>
                     <p>Le lien de réinitialisation est invalide ou a expiré<p>
                 </span>';
                 header('Location: /');
                 exit;
             }
         } catch (PDOException $error) {
+            $_SESSION['message'] = '
+            <span class="message_error">
+                <strong>❌ Erreur 500 | Serveur</strong>
+                <p>Veuillez ressayer plus tard<p>
+            </span>';
             header('Location: /');
             exit;
         }

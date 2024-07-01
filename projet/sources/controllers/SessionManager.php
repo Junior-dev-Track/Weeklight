@@ -23,23 +23,14 @@ class SessionManager
 
     public function login()
     {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
         $user = new LoginUser();
-        return $user->authenticate($email, $password);
+        return $user->authenticate($_POST['email'], $_POST['password']);
     }
 
     public function forgotPassword($email)
     {
         $newPasswordUser = new NewPasswordUser();
-        $newPasswordUser->sendMail($email);
-        $_SESSION['message'] = '
-        <span class="message_alert">
-            <strong>👍 Un email vient d\'être envoyé.</strong>
-            <p>À votre boîte mail pour changer votre mot de passe<p>
-        </span>';
-        return $_SESSION['message'];
+        return $newPasswordUser->sendMail($email);
     }
 
     public function logout()
@@ -53,6 +44,6 @@ class SessionManager
         }
 
         header('Location: /');
-        exit();
+        exit;
     }
 }

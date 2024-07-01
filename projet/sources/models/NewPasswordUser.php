@@ -2,10 +2,9 @@
 
 namespace models;
 
+use models\Database;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
-use models\Database;
-use PDOException;
 
 class NewPasswordUser
 {
@@ -47,16 +46,30 @@ class NewPasswordUser
 
             $mail->isHTML(true);
             $mail->Subject = 'Changement de mot de passe';
-            $mail->Body = "
-                <h1>Réinitialisez votre mot de passe</h1>
+            $mail->Body =
+                "
+                <h1>Vous venez de faire une demande pour modifier votre mot de passe</h1>
                 <p>Veuillez cliquer sur le lien ci-dessous pour réinitialiser votre mot de passe :</p>
                 <a href=\"$resetURL\">Réinitialiser mon mot de passe</a>
-            ";
+                ";
             $mail->send();
-        } catch (PDOException $error) {
-            error_log("Erreur de base de données : {$error->getMessage()}");
+
+            $_SESSION['message'] = '
+            <span class="message_alert">
+                <strong>🙃 Un email vient d\'être envoyé.</strong>
+                <p>Allez dans votre boîte mail pour changer votre mot de passe<p>
+            </span>';
+
+            header('Location: /');
+            exit;
         } catch (Exception $error) {
-            error_log("Le message n'a pas pu être envoyé. Erreur de Mailer : {$mail->ErrorInfo}");
+            $_SESSION['message'] = '
+            <span class="message_alert">
+                <strong>❌ Erreur !</strong>
+                <p>Le message n\'a pas pu être envoyé<p>
+            </span>';
+            header('Location: /');
+            exit;
         }
     }
 }

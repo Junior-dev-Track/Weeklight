@@ -71,7 +71,7 @@ class TokenManager
         }
     }
 
-    public function emailToken(string $token): ?array
+    public function emailToken(string $token)
     {
         try {
             $sql = "SELECT * FROM users WHERE token = :token";
@@ -85,11 +85,32 @@ class TokenManager
                 $queryUpdate = $this->database->pdo->prepare($sqlUpdate);
                 $queryUpdate->bindParam(':token', $token, \PDO::PARAM_STR);
                 $queryUpdate->execute();
-                return $account;
             }
-            return null;
+
+            if ($account) {
+                $_SESSION['message'] = '
+                <span class="message_validate">
+                    <strong>✅ Super !</strong>
+                    <p>Votre mot de passe a été réinitialisé avec succès<p>
+                </span>';
+            } else {
+                $_SESSION['message'] = '
+                <span class="message_alert">
+                    <strong>😔 Zute !</strong>
+                    <p>Le token est invalide ou a expiré.<p>
+                </span>';
+            }
+
+            header('Location: /');
+            exit;
         } catch (PDOException $error) {
-            return null;
+            $_SESSION['message'] = '
+            <span class="message_error">
+                <strong>❌ Erreur 500 | Serveur</strong>
+                <p>Veuillez ressayer plus tard<p>
+            </span>';
+            header('Location: /');
+            exit;
         }
     }
 }

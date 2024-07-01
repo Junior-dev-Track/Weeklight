@@ -42,7 +42,11 @@ class ViewController
                         $resetPassword->reset($token, $newPassword);
                     } else {
                         session_start();
-                        $_SESSION['message'] = "Les mots de passe ne correspondent pas.";
+                        $_SESSION['message'] = '
+                        <span class="message_error">
+                            <strong>❌ Erreur !</strong>
+                            <p>Les mots de passe ne correspondent pas<p>
+                        </span>';
                         header("Location: /forgot-password?token=$token");
                         exit;
                     }
@@ -58,16 +62,8 @@ class ViewController
                     break;
 
                 case isset($_GET['token']):
-                    $token = $_GET['token'];
                     $tokenManager = new TokenManager();
-                    $account = $tokenManager->emailToken($token);
-
-                    if ($account) {
-                        $_SESSION['message'] = 'Votre adresse email a été confirmée avec succès !';
-                    } else {
-                        $_SESSION['message'] = 'Le token est invalide ou a expiré.';
-                    }
-                    header('Location: /');
+                    $account = $tokenManager->emailToken($_GET['token']);
                     break;
             }
         }

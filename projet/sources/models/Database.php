@@ -25,10 +25,10 @@ class Database
         } catch (PDOException) {
             session_start();
             $_SESSION['message'] = '
-                        <span class="message_error">
-                            <strong>❌ Erreur 500</strong>
-                            <p>Erreur interne du serveur<p>
-                        </span>';
+            <span class="message_error">
+                <strong>❌ Erreur 500 | Serveur</strong>
+                <p>Erreur interne du serveur<p>
+            </span>';
             header('Location: /');
             exit;
         }
