@@ -3,13 +3,13 @@
 namespace controllers;
 
 use controllers\SessionManager;
-use models\ResetPassword;
+use models\Password;
 use models\TokenManager;
-use models\SearchUser;
+use models\Search;
 
 class ViewController
 {
-    public function home()
+    public function pageHome()
     {
         session_start();
         $session = new SessionManager();
@@ -17,19 +17,19 @@ class ViewController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             switch (true) {
                 case isset($_POST['register']):
-                    $session->register();
+                    $session->registerUser();
                     break;
                 case isset($_POST['logout']):
-                    $session->logout();
+                    $session->logoutUser();
                     break;
 
                 case isset($_POST['new_password_user']):
                     $email = $_POST['new_password_user'];
-                    $session->forgotPassword($email);
+                    $session->resetPassword($email);
                     break;
 
                 case isset($_POST['email']) && isset($_POST['password']):
-                    $session->login();
+                    $session->loginUser();
                     break;
 
                 case !empty($_POST['token']) && !empty($_POST['new_password']) && !empty($_POST['confirm_password']):
@@ -38,13 +38,13 @@ class ViewController
                     $confirmPassword = $_POST['confirm_password'];
 
                     if ($newPassword === $confirmPassword) {
-                        $resetPassword = new ResetPassword();
-                        $resetPassword->reset($token, $newPassword);
+                        $resetPassword = new Password;
+                        $resetPassword->resetPassword($token, $newPassword);
                     } else {
                         session_start();
                         $_SESSION['message'] = '
                         <span class="message_error">
-                            <strong>❌ Erreur !</strong>
+                            <strong>❌ Attention !</strong>
                             <p>Les mots de passe ne correspondent pas<p>
                         </span>';
                         header("Location: /forgot-password?token=$token");
@@ -56,11 +56,6 @@ class ViewController
 
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             switch (true) {
-                    // case isset($_GET['new_password_user']):
-                    //     $email = urldecode($_GET['new_password_user']);
-                    //     $session->forgotPassword($email);
-                    //     break;
-
                 case isset($_GET['token']):
                     $tokenManager = new TokenManager();
                     $account = $tokenManager->emailToken($_GET['token']);
@@ -78,10 +73,10 @@ class ViewController
                 if ($account) {
                     include __DIR__ . "/../../public/views/page_home.php";
                 } else {
-                    $session->logout();
+                    $session->logoutUser();
                 }
             } else {
-                $session->logout();
+                $session->logoutUser();
             }
         } else {
             include __DIR__ . "/../../public/views/page_login.php";
@@ -93,15 +88,24 @@ class ViewController
         }
     }
 
-    public function forgotPassword()
+    public function pageForgotPassword()
     {
         session_start();
-        $session = new SessionManager();
 
-        if ($_SERVER['REQUEST_METHOD'] === 'GET') {
-            if (isset($_GET['email'])) {
-                $email = urldecode($_GET['email']);
-                $session->forgotPassword($email);
+        if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['email'])) {
+            $search = new Search;
+            $email = urldecode($_GET['email']);
+            $result = $search->email($email);
+
+            if ($result) {
+                $session = new SessionManager;
+                $session->resetPassword($email);
+            } else {
+                $_SESSION['message'] = '
+                    <span class="message_error">
+                        <strong>❌ Erreur !</strong>
+                        <p>Mais vous n\'avez pas de compte Weeklight.<p>
+                    </span>';
             }
         }
 
@@ -113,31 +117,36 @@ class ViewController
         }
     }
 
-    public function friends()
+    public function pageFriends()
     {
         include __DIR__ . "/../../public/views/page_friends.php";
     }
 
-    public function messages()
+    public function pageMessages()
     {
         include __DIR__ . "/../../public/views/page_messages.php";
     }
 
-    public function profile($path)
+    public function pageProfile($url)
     {
         session_start();
-        $user = new SearchUser();
-        $_SESSION["search"] = $user->profile($path);
+        $getAccount = new Search();
+        $_SESSION["search"] = $getAccount->profile($url);
+
+        if (isset($_POST['email']) && isset($_POST['password'])) {
+            $session = new SessionManager;
+            $session->loginUser();
+        }
 
         include __DIR__ . "/../../public/views/page_profile.php";
     }
 
-    public function error404(): void
+    public function pageError404(): void
     {
         include __DIR__ . "/../../public/views/page_404.php";
     }
 
-    public function maintenance(): void
+    public function pageMaintenance(): void
     {
         include __DIR__ . "/../../public/views/page_maintenance.php";
     }

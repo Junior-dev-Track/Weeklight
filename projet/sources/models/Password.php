@@ -6,7 +6,7 @@ use models\Database;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-class NewPasswordUser
+class Password
 {
     private $database;
 
@@ -15,7 +15,7 @@ class NewPasswordUser
         $this->database = new Database();
     }
 
-    public function sendMail($email)
+    public function sendAnEmail($email)
     {
         $token = bin2hex(random_bytes(32));
         $expires = date("U") + 1800; // Le token expire dans 30 minutes
@@ -69,6 +69,55 @@ class NewPasswordUser
                 <p>Le message n\'a pas pu être envoyé<p>
             </span>';
             header('Location: /forgot-password');
+            exit;
+        }
+    }
+
+    public function resetPassword($token, $newPassword)
+    {
+        try {
+            $sql = "SELECT * FROM users WHERE reset_token = :token AND reset_token_expires >= :now LIMIT 1";
+            $query = $this->database->pdo->prepare($sql);
+            $now = date("U");
+            $query->bindParam(':token', $token);
+            $query->bindParam(':now', $now);
+            $query->execute();
+
+            $user = $query->fetch(\PDO::FETCH_ASSOC);
+
+            session_start();
+            if ($user) {
+                $email = $user['email'];
+                $passwordHash = password_hash($newPassword, PASSWORD_DEFAULT);
+                $updateSql = "UPDATE users SET password = :password, reset_token = NULL, reset_token_expires = NULL WHERE email = :email";
+                $updateQuery = $this->database->pdo->prepare($updateSql);
+                $updateQuery->bindParam(':password', $passwordHash);
+                $updateQuery->bindParam(':email', $email);
+                $updateQuery->execute();
+
+                $_SESSION['message'] = '
+                <span class="message_validate">
+                    <strong>✅ Bien joué</strong>
+                    <p>Votre mot de passe a été réinitialisé avec succès<p>
+                </span>';
+                header('Location: /');
+                exit;
+            } else {
+                $_SESSION['message'] = '
+                <span class="message_alert">
+                    <strong>😔 Zute</strong>
+                    <p>Le lien de réinitialisation est invalide ou a expiré<p>
+                </span>';
+                header('Location: /');
+                exit;
+            }
+        } catch (PDOException $error) {
+            $_SESSION['message'] = '
+            <span class="message_error">
+                <strong>❌ Erreur 500 | Serveur</strong>
+                <p>Veuillez ressayer plus tard<p>
+            </span>';
+            header('Location: /');
             exit;
         }
     }

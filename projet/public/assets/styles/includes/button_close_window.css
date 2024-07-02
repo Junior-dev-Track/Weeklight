@@ -1,7 +1,7 @@
 /* 
  * DESIGN BUTTON CLOSE REGISTER
  */
-#button_close_register {
+#button_close_window {
   position: absolute;
   top: 25px;
   right: 20px;
@@ -9,6 +9,6 @@
   font-size: 24px;
   transition: 0.6s;
 }
-#button_close_register:hover {
+#button_close_window:hover {
   scale: 1.1;
 }

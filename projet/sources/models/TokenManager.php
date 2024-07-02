@@ -91,7 +91,7 @@ class TokenManager
                 $_SESSION['message'] = '
                 <span class="message_validate">
                     <strong>✅ Super !</strong>
-                    <p>Votre mot de passe a été réinitialisé avec succès<p>
+                    <p>Ton compte vient d\'être activer<p>
                 </span>';
             } else {
                 $_SESSION['message'] = '

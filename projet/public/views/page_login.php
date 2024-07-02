@@ -35,7 +35,7 @@
 
     <section id="container_register">
       <div class="card-title">
-        <button id="button_close_register">❌</button>
+        <button id="button_close_window">❌</button>
         <h2 class="title">S’inscrire</h2>
         <p class="text">C'est rapide et simple.</p>
       </div>

@@ -5,7 +5,7 @@ namespace models;
 use models\Database;
 use PDOException;
 
-class SearchUser
+class Search
 {
     private $database;
 
@@ -33,6 +33,24 @@ class SearchUser
             }
         } catch (PDOException $error) {
             return null;
+        }
+    }
+
+    public function email(string $email): bool
+    {
+        $sql = "SELECT email FROM users WHERE email = :email";
+
+        $query = $this->database->pdo->prepare($sql);
+
+        $query->bindParam(':email', $email, \PDO::PARAM_STR);
+        $query->execute();
+
+        $result = $query->fetch(\PDO::FETCH_ASSOC);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
         }
     }
 }

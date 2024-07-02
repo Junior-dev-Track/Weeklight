@@ -5,7 +5,7 @@ namespace models;
 use models\Database;
 use models\TokenManager;
 
-class LoginUser
+class Login
 {
     private $database;
     private $tokenManager;
@@ -25,7 +25,6 @@ class LoginUser
         $account = $query->fetch(\PDO::FETCH_ASSOC);
 
         session_start();
-
         if ($account) {
             if ($account['account'] === 1) {
                 if (password_verify($password, $account['password'])) {

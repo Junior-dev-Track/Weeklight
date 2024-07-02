@@ -1,0 +1,37 @@
+/*
+ * DESIGN CONTAINER SHOW
+ */
+#container_show {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  display: none;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
+  background: rgb(255, 255, 255);
+  width: 520px;
+  border-radius: 8px;
+  z-index: 2;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+#container_show > .card-title {
+  padding: 20px;
+}
+
+#container_show > .card-title > h2 {
+  font-size: 32px;
+}
+
+#container_show > hr {
+  height: 1.5px;
+  background: rgb(215, 215, 215);
+}
+
+#container_show > form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  padding: 20px;
+}

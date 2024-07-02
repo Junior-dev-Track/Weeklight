@@ -1,0 +1,65 @@
+/*
+ * DESIGN CARD MY PROFILE
+ */
+
+.card_my_profile {
+  margin: auto;
+  width: 90%;
+  display: flex;
+  background: rgb(255, 255, 255);
+  border-radius: 0px 0px 16px 16px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
+    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+}
+
+.user_profile,
+.user_info {
+  margin: auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* USER  */
+.user_profile {
+  justify-content: center;
+}
+
+.user_profile > .user_picture {
+  display: flex;
+  justify-content: center;
+  margin: 20px auto 10px;
+}
+
+.user_picture > img {
+  border-radius: 16px;
+  width: 150px;
+  height: 150px;
+}
+
+.card_my_profile > .user_profile > .user_counter {
+  display: flex;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+.counter_friends,
+.counter_followers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.counter_friends > p,
+.counter_followers > p {
+  margin: auto;
+}
+
+/* USER INFO */
+.user_info {
+  margin: 20px;
+}
+
+.user_info > h1 {
+  font-size: 42px;
+}

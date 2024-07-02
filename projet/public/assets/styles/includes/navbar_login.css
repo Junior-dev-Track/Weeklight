@@ -7,3 +7,7 @@ header > nav > .form_login {
   align-items: center;
   column-gap: 5px;
 }
+
+header > nav > .form_login > input:focus::placeholder {
+  color: rgb(25, 115, 250);
+}

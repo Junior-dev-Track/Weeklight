@@ -2,31 +2,31 @@
 
 namespace controllers;
 
-use models\RegisterNewUser;
-use models\LoginUser;
-use models\NewPasswordUser;
+use models\Register;
+use models\Login;
+use models\Password;
 
 class SessionManager
 {
-    public function register()
+    public function registerUser()
     {
-        $registerNewUser = new RegisterNewUser();
+        $registerNewUser = new Register;
         return $registerNewUser->register($_POST['first_name'], $_POST['last_name'], $_POST['birth'], $_POST['gender'], $_POST['email'], $_POST['password']);
     }
 
-    public function login()
+    public function loginUser()
     {
-        $user = new LoginUser();
-        return $user->authenticate($_POST['email'], $_POST['password']);
+        $LoginUser = new Login();
+        return $LoginUser->authenticate($_POST['email'], $_POST['password']);
     }
 
-    public function forgotPassword($email)
+    public function resetPassword($email)
     {
-        $newPasswordUser = new NewPasswordUser();
-        return $newPasswordUser->sendMail($email);
+        $resetPassword = new Password();
+        return $resetPassword->sendAnEmail($email);
     }
 
-    public function logout()
+    public function logoutUser()
     {
         session_start();
         session_unset();

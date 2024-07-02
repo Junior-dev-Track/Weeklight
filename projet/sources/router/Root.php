@@ -8,38 +8,38 @@ class Root
 {
     public function __construct()
     {
-        $page = new ViewController();
+        $view = new ViewController();
 
         $url = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), "/");
 
         if (strpos($url, ".php") !== false) {
-            return $page->error404();
+            return $view->pageError404();
         }
 
         switch ($url) {
             case "":
-                $page->home();
+                $view->pageHome();
                 break;
 
             case "forgot-password":
                 if (isset($_GET['new_password_user'])) {
                     $email = urldecode($_GET['new_password_user']);
-                    $page->forgotPassword($email);
+                    $view->pageForgotPassword($email);
                 } else {
-                    $page->forgotPassword(null);
+                    $view->pageForgotPassword(null);
                 }
                 break;
 
             case "friends":
-                $page->friends();
+                $view->pageFriends();
                 break;
 
             case "messages":
-                $page->messages();
+                $view->pageMessages();
                 break;
 
             default:
-                $page->profile($url);
+                $view->pageProfile($url);
                 break;
         }
     }

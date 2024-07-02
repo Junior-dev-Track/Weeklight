@@ -1,27 +1,34 @@
 @import "./reset.css";
 
-/* DESIGN SITE*/
+/* STYLE AND DESIGN FOR SITE */
 @import "./logo.css";
 @import "./body.css";
 @import "./header.css";
 
-/* DESIGN BUTTONS */
-@import "./includes/button_cancel.css";
-@import "./includes/button_close_register.css";
-@import "./includes/button_connection_account.css";
-@import "./includes/button_forgot_password.css";
-@import "./includes/button_profile.css";
-@import "./includes/button_register_account.css";
-@import "./includes/button_view_register.css";
-
-/* DESIGN CARDS */
-@import "./includes/card_reminder_message.css";
+/* STYLE AND DESIGN FOR PAGE  */
+@import "./includes/component_login.css";
+@import "./includes/component_new_password.css";
+@import "./includes/component_reset_password.css";
 
 /* DESIGN NAVBAR */
 @import "./includes/navbar_login.css";
 @import "./includes/navbar_menu.css";
 
-/* DESIGN PAGES */
-@import "./includes/main_login.css";
-@import "./includes/main_new_password.css";
-@import "./includes/main_reset_password.css";
+/* DESIGN CONTAINERS */
+@import "./includes/container_show.css";
+
+/* DESIGN CARDS */
+@import "./includes/card_my_profile.css";
+@import "./includes/card_posts.css";
+@import "./includes/card_reminder_message.css";
+
+/* DESIGN BUTTONS */
+@import "./includes/button_add_new_post.css";
+@import "./includes/button_cancel.css";
+@import "./includes/button_close_window.css";
+@import "./includes/button_connection_account.css";
+@import "./includes/button_forgot_password.css";
+@import "./includes/button_open_window_post.css";
+@import "./includes/button_profile.css";
+@import "./includes/button_register_account.css";
+@import "./includes/button_view_register.css";
