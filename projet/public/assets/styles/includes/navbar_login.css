@@ -1,13 +1,12 @@
 /*
  * DESIGN NAVBAR LOGIN
  */
-
-header > nav > .form_login {
+.form_login {
   display: flex;
   align-items: center;
   column-gap: 5px;
 }
 
-header > nav > .form_login > input:focus::placeholder {
-  color: rgb(25, 115, 250);
+.form_login > input:focus::placeholder {
+  color: rgb(35, 140, 210);
 }

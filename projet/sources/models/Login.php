@@ -30,7 +30,7 @@ class Login
                 if (password_verify($password, $account['password'])) {
                     if ($this->tokenManager->addToken($email)) {
                         $token = $this->tokenManager->getToken($email);
-                        setcookie("token", $token, time() + 60 * 2);
+                        setcookie("token", $token, time() + 60 * 60);
                         $_SESSION["account"] = $account;
                         header('Location: /');
                         exit;
@@ -46,7 +46,7 @@ class Login
                 } else {
                     $_SESSION['message'] = '
                         <span class="message_error">
-                            <strong>❌ Attention !</strong>
+                            <strong>❌ Erreur !</strong>
                             <p>Email ou mot de passe incorrect<p>
                         </span>';
                     header('Location: /');

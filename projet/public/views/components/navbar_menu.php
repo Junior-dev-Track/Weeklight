@@ -1,12 +1,11 @@
 <header>
 	<nav>
-		<div class="search">
-			<a href="/" class="logo_nav_bar">Weeklight</a>
-			<form id="form_search" action="" method="get">
-				<img id="icon_search" src="./../../assets/svgs/magnifer.svg" alt="icône recherche">
-				<input id="input_search" type="search" name="" placeholder="Rechercher sur Weeklight">
-			</form>
-		</div>
+		<a href="/" class="logo_nav_bar">Weeklight</a>
+
+		<form class="form_search" action="" method="get">
+			<img src="./../../assets/svgs/magnifer.svg" alt="icône recherche">
+			<input type="search" name="" placeholder="Rechercher sur Weeklight">
+		</form>
 
 		<ul class="menu">
 			<li id="link_home">
@@ -31,18 +30,6 @@
 			</li>
 		</ul>
 	</nav>
+
+	<?php require_once __DIR__ . "/component_menu_profile.php"; ?>
 </header>
-
-<div id="container_profile">
-	<a href="/<?php echo $_SESSION["account"]["nick_name"] ?>">
-		<img src="./../../assets/svgs/user.svg" alt="lien profil">
-		<?php echo $_SESSION["account"]["first_name"] . " " . $_SESSION["account"]["last_name"] ?>
-	</a>
-
-	<a href="/settings"><img src="./../../assets/svgs/settings.svg" alt="lien paramètre">Paramètres</a>
-
-	<form action="/" method="POST">
-		<input type="image" src="./../../assets/svgs/hand.svg" alt="bouton déconnecter">
-		<button type="submit" name="logout">Déconnecter</button>
-	</form>
-</div>

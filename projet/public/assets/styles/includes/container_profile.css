@@ -1,0 +1,8 @@
+/*
+ * DESIGN CONTAINER PROFILE
+ */
+.container_profile {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+}

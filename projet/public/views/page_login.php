@@ -32,7 +32,6 @@
     </div>
 
     <span id="filter_container"></span>
-
     <section id="container_register">
       <div class="card-title">
         <button id="button_close_window">❌</button>
@@ -84,7 +83,6 @@
       </form>
     </section>
   </main>
-
   <script defer src="./../../assets/scripts/button_register.js"></script>
 </body>
 

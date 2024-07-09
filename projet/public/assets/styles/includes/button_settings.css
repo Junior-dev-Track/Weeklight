@@ -1,8 +1,8 @@
 /* 
- * DESIGN BUTTON OPEN WINDOW POST
+ * DESIGN BUTTON SETTINGS
  */
-#button_open_window_post {
-  background: rgba(65, 185, 40);
+#button_settings {
+  background: rgb(35, 140, 210);
   color: rgb(255, 255, 255);
   width: 100%;
   display: flex;
@@ -17,6 +17,6 @@
   transition: 1s;
 }
 
-#button_open_window_post:hover {
+#button_settings:hover {
   scale: 1.04;
 }

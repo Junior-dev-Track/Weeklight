@@ -1,6 +1,7 @@
 <?php
 
 use models\TokenManager;
+use models\Post;
 
 $token = $_COOKIE["token"] ?? null;
 $account = null;
@@ -8,7 +9,14 @@ $account = null;
 if ($token) {
     $tokenManager = new TokenManager;
     $account = $tokenManager->matchToken($token);
-} ?>
+}
+
+$posts = [];
+if ($account) {
+    $post = new Post;
+    $posts = $post->getUserPosts($account['id']);
+}
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -24,6 +32,8 @@ if ($token) {
     <?php
     if ($account) {
         require_once __DIR__ . "/components/navbar_menu.php";
+        echo '<script defer src="./../assets/scripts/navbar_menu.js"></script>';
+        echo '<script defer src="./../assets/scripts/button_post.js"></script>';
     } else {
         require_once __DIR__ . "/components/navbar_login.php";
     }
@@ -34,11 +44,8 @@ if ($token) {
         </main>
     <?php
     } else {
-        require_once __DIR__ . "/components/component_my_profile.php";
+        require_once __DIR__ . "/components/component_profile.php";
     } ?>
-
-    <script defer src="./../assets/scripts/navbar_menu.js"></script>
-    <script defer src="./../assets/scripts/button_open_window_post.js"></script>
 </body>
 
 </html>

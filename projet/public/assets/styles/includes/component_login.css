@@ -14,14 +14,14 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  row-gap: 70px;
+  gap: 30px;
 }
 
 /* SECTION ABOUT : */
 .about > .title {
   text-align: center;
   font-size: 72px;
-  padding-bottom: 5%;
+  padding-bottom: 20px;
 }
 
 .about > .text {
@@ -39,7 +39,7 @@
   display: flex;
   flex-direction: column;
   row-gap: 20px;
-  border-radius: 8px;
+  border-radius: 16px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
 }
@@ -102,7 +102,7 @@
   transform: translate(-50%, -50%);
   background: rgb(255, 255, 255);
   width: 520px;
-  border-radius: 8px;
+  border-radius: 16px;
   z-index: 2;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
     rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;

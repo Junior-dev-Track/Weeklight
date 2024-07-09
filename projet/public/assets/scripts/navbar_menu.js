@@ -24,16 +24,16 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   button_profile.addEventListener("click", () => {
-    container_profile.style.display = "flex";
+    component_menu_profile.style.display = "flex";
   });
 
   document.addEventListener("click", (event) => {
     const isClickInside =
-      container_profile.contains(event.target) ||
+      component_menu_profile.contains(event.target) ||
       button_profile.contains(event.target);
 
     if (!isClickInside) {
-      container_profile.style.display = "none";
+      component_menu_profile.style.display = "none";
     }
   });
 });

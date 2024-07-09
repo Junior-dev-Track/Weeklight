@@ -3,10 +3,12 @@
  */
 header {
   position: relative;
-  width: 100%;
-  background: rgb(255, 255, 255);
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px,
-    rgba(0, 0, 0, 0.1) 0px 0px 1px 0px;
+  width: 80%;
+  margin: 15px auto 0px;
+  background: rgb(250, 250, 250);
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 }
 
 /* SIZE NAVBAR */

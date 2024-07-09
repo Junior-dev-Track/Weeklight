@@ -1,0 +1,64 @@
+/*
+ * DESIGN COMPONENT MENU PROFILE
+ */
+#component_menu_profile {
+  z-index: 1;
+  position: absolute;
+  right: 0;
+  background: rgb(255, 255, 255);
+  margin-top: 7.5px;
+  padding: 10px;
+  min-width: fit-content;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 10px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 3px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}
+
+#component_menu_profile > a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 6px;
+  padding: 20px;
+  width: 100%;
+  font-size: 22px;
+  color: rgb(0, 0, 0);
+}
+
+#component_menu_profile > a:hover {
+  background: rgb(240, 240, 240);
+  border-radius: 8px;
+}
+
+#component_menu_profile > a > img {
+  width: 32px;
+  height: 32px;
+}
+
+#component_menu_profile > form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 6px;
+  width: 100%;
+  padding: 20px;
+}
+
+#component_menu_profile > form:hover {
+  background: rgb(240, 240, 240);
+  border-radius: 8px;
+}
+
+#component_menu_profile > form > input[type="image"] {
+  width: 32px;
+  height: 32px;
+}
+
+#component_menu_profile > form > button {
+  background: none;
+  font-size: 22px;
+}

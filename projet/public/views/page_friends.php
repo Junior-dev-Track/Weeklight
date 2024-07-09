@@ -13,8 +13,8 @@ if ($token) {
 }
 
 if (!$account) {
-    $session = new SessionManager();
-    $session->logout();
+    $session = new SessionManager;
+    $session->logoutUser();
 } else { ?>
     <!DOCTYPE html>
     <html lang="fr">

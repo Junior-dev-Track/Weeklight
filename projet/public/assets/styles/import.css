@@ -4,10 +4,13 @@
 @import "./logo.css";
 @import "./body.css";
 @import "./header.css";
+@import "./main.css";
 
 /* STYLE AND DESIGN FOR PAGE  */
 @import "./includes/component_login.css";
+@import "./includes/component_menu_profile.css";
 @import "./includes/component_new_password.css";
+@import "./includes/component_post.css";
 @import "./includes/component_reset_password.css";
 
 /* DESIGN NAVBAR */
@@ -15,11 +18,11 @@
 @import "./includes/navbar_menu.css";
 
 /* DESIGN CONTAINERS */
+@import "./includes/container_profile.css";
 @import "./includes/container_show.css";
 
 /* DESIGN CARDS */
-@import "./includes/card_my_profile.css";
-@import "./includes/card_posts.css";
+@import "./includes/card_profile.css";
 @import "./includes/card_reminder_message.css";
 
 /* DESIGN BUTTONS */
@@ -31,4 +34,5 @@
 @import "./includes/button_open_window_post.css";
 @import "./includes/button_profile.css";
 @import "./includes/button_register_account.css";
+@import "./includes/button_settings.css";
 @import "./includes/button_view_register.css";

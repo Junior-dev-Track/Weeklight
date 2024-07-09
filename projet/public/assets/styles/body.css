@@ -4,4 +4,8 @@ body {
   background: rgb(240, 240, 245);
   font-family: "Roboto", sans-serif;
   font-style: normal;
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  margin-bottom: 15px;
 }

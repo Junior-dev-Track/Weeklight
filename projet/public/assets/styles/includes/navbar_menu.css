@@ -3,32 +3,33 @@
  */
 
 /* SEARCH SIDE*/
-header > nav > .search {
+header > nav {
   display: flex;
   align-items: center;
-  column-gap: 30px;
+  column-gap: 20px;
 }
 
-.search > form {
+.form_search {
   background: rgb(240, 240, 245);
+  flex: 1;
   display: flex;
   align-items: center;
   column-gap: 10px;
-  width: fit-content;
   padding: 10px;
-  border-radius: 50px;
+  border-radius: 16px;
 }
 
-.search > form > #icon_search {
+.form_search > img {
   width: 16px;
   height: 16px;
 }
 
-.search > form > input[type="search"]::placeholder {
+.form_search > input[type="search"]::placeholder {
   font-size: 16px;
 }
 
-.search > form > input[type="search"] {
+.form_search > input[type="search"] {
+  flex: 1;
   background: rgb(240, 240, 245);
   width: 200px;
   height: 100%;
@@ -36,11 +37,11 @@ header > nav > .search {
 }
 
 /* MENU SIDE */
-header > nav > .menu {
+.menu {
   display: flex;
   align-items: center;
   justify-content: center;
-  column-gap: 30px;
+  column-gap: 20px;
 }
 
 .menu > li {

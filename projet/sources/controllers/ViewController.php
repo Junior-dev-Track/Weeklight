@@ -6,6 +6,7 @@ use controllers\SessionManager;
 use models\Password;
 use models\TokenManager;
 use models\Search;
+use models\Post;
 
 class ViewController
 {
@@ -57,7 +58,7 @@ class ViewController
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
             switch (true) {
                 case isset($_GET['token']):
-                    $tokenManager = new TokenManager();
+                    $tokenManager = new TokenManager;
                     $account = $tokenManager->emailToken($_GET['token']);
                     break;
             }
@@ -67,7 +68,7 @@ class ViewController
             $token = $_COOKIE["token"] ?? null;
 
             if ($token) {
-                $tokenManager = new TokenManager();
+                $tokenManager = new TokenManager;
                 $account = $tokenManager->matchToken($token);
 
                 if ($account) {
@@ -133,9 +134,38 @@ class ViewController
         $getAccount = new Search();
         $_SESSION["search"] = $getAccount->profile($url);
 
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['post_content'])) {
+            $token = $_COOKIE["token"] ?? null;
+            if ($token) {
+                $tokenManager = new TokenManager;
+                $account = $tokenManager->matchToken($token);
+                if ($account) {
+                    $postModel = new Post();
+                    $postModel->createPost($account['id'], $_POST['post_content']);
+                }
+            }
+        }
+
         if (isset($_POST['email']) && isset($_POST['password'])) {
             $session = new SessionManager;
             $session->loginUser();
+        }
+
+        $token = $_COOKIE["token"] ?? null;
+        $account = null;
+        $postsByDay = [];
+        if ($token) {
+            $tokenManager = new TokenManager;
+            $account = $tokenManager->matchToken($token);
+            if ($account) {
+                $postModel = new Post();
+                $posts = $postModel->getUserPosts($account['id']);
+
+                foreach ($posts as $post) {
+                    $day = date('l', strtotime($post['created_at']));
+                    $postsByDay[$day][] = $post;
+                }
+            }
         }
 
         include __DIR__ . "/../../public/views/page_profile.php";
