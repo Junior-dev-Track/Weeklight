@@ -1,31 +1,20 @@
-@import "./reset.css";
-
-/* STYLE AND DESIGN FOR SITE */
-@import "./logo.css";
-@import "./body.css";
-@import "./header.css";
-@import "./main.css";
-
-/* STYLE AND DESIGN FOR PAGE  */
+/* DESIGN */
+@import "./design.css";
+/* IMPORT COMPONENTS */
+@import "./includes/component_filter.css";
 @import "./includes/component_login.css";
 @import "./includes/component_menu_profile.css";
+@import "./includes/component_navbar_login.css";
+@import "./includes/component_navbar_menu.css";
 @import "./includes/component_new_password.css";
 @import "./includes/component_post.css";
+@import "./includes/component_profil.css";
+@import "./includes/component_register.css";
 @import "./includes/component_reset_password.css";
-
-/* DESIGN NAVBAR */
-@import "./includes/navbar_login.css";
-@import "./includes/navbar_menu.css";
-
-/* DESIGN CONTAINERS */
+/* IMPORT COMPONENTS */
 @import "./includes/container_profile.css";
 @import "./includes/container_show.css";
-
-/* DESIGN CARDS */
-@import "./includes/card_profile.css";
-@import "./includes/card_reminder_message.css";
-
-/* DESIGN BUTTONS */
+/* IMPORT BUTTONS */
 @import "./includes/button_add_new_post.css";
 @import "./includes/button_cancel.css";
 @import "./includes/button_close_window.css";
@@ -36,3 +25,5 @@
 @import "./includes/button_register_account.css";
 @import "./includes/button_settings.css";
 @import "./includes/button_view_register.css";
+/* IMPORT CARDS */
+@import "./includes/card_reminder_message.css";

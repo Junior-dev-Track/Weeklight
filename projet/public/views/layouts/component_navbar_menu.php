@@ -10,26 +10,24 @@
 		<ul class="menu">
 			<li id="link_home">
 				<a href="/">
-					<img src="./../../assets/svgs/station.svg" alt="icône home">
+					<img src="./../../assets/svgs/station.svg" alt="lien home">
 				</a>
 			</li>
 			<li id="link_friends">
 				<a href="/friends">
-					<img src="./../../assets/svgs/friends.svg" alt="icône amis">
+					<img src="./../../assets/svgs/friends.svg" alt="lien amis">
 				</a>
 			</li>
 			<li id="link_messages">
 				<a href="/messages">
-					<img src="./../../assets/svgs/messages.svg" alt="icône messagerie">
+					<img src="./../../assets/svgs/messages.svg" alt="lien messagerie">
 				</a>
 			</li>
 			<li id="link_profile">
-				<button id="button_profile">
-					<img src="./../../assets/svgs/user.svg" alt="icône profil">
-				</button>
+				<a href="/<?php echo $_SESSION["account"]["nick_name"] ?>">
+					<img src="./../../assets/svgs/user.svg" alt="lien profil">
+				</a>
 			</li>
 		</ul>
 	</nav>
-
-	<?php require_once __DIR__ . "/component_menu_profile.php"; ?>
 </header>

@@ -1,39 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
-  url = window.location.href;
+  const url = window.location.href;
 
-  switch (url) {
-    case "http://localhost:3000/":
-      link_home.style.filter =
-        "invert(42%) sepia(55%) saturate(983%) hue-rotate(258deg) brightness(80%) contrast(85%)";
-      break;
+  const filter = (element) => {
+    element.style.filter =
+      "brightness(0) saturate(100%) invert(41%) sepia(23%) saturate(1419%) hue-rotate(253deg) brightness(94%) contrast(98%)";
+  };
 
-    case "http://localhost:3000/friends":
-      link_friends.style.filter =
-        "invert(42%) sepia(55%) saturate(983%) hue-rotate(258deg) brightness(80%) contrast(85%)";
-      break;
+  const links = document.querySelectorAll("li > a > img");
 
-    case "http://localhost:3000/messages":
-      link_messages.style.filter =
-        "invert(42%) sepia(55%) saturate(983%) hue-rotate(258deg) brightness(80%) contrast(85%)";
-      break;
+  links.forEach((img) => {
+    const parent = img.closest("li");
 
-    case "http://localhost:3000/profile":
-      link_profile.style.filter =
-        "invert(42%) sepia(55%) saturate(983%) hue-rotate(258deg) brightness(80%) contrast(85%)";
-      break;
-  }
+    switch (url) {
+      case "http://localhost:3000/":
+        if (parent.id === "link_home") filter(img);
+        break;
 
-  button_profile.addEventListener("click", () => {
-    component_menu_profile.style.display = "flex";
-  });
+      case "http://localhost:3000/friends":
+        if (parent.id === "link_friends") filter(img);
+        break;
 
-  document.addEventListener("click", (event) => {
-    const isClickInside =
-      component_menu_profile.contains(event.target) ||
-      button_profile.contains(event.target);
+      case "http://localhost:3000/messages":
+        if (parent.id === "link_messages") filter(img);
+        break;
 
-    if (!isClickInside) {
-      component_menu_profile.style.display = "none";
+      default:
+        if (parent.id === "link_profile") filter(img);
+        break;
     }
   });
 });

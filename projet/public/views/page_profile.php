@@ -24,27 +24,27 @@ if ($account) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./../../assets/styles/import.css" />
     <title>Profil | Weeklight</title>
+    <link rel="stylesheet" href="./../../assets/styles/import.css" />
 </head>
 
 <body>
     <?php
     if ($account) {
-        require_once __DIR__ . "/components/navbar_menu.php";
+        require __DIR__ . "/layouts/component_navbar_menu.php";
         echo '<script defer src="./../assets/scripts/navbar_menu.js"></script>';
         echo '<script defer src="./../assets/scripts/button_post.js"></script>';
     } else {
-        require_once __DIR__ . "/components/navbar_login.php";
+        require __DIR__ . "/layouts/component_navbar_login.php";
     }
 
     if (empty($_SESSION["search"])) { ?>
         <main>
-            <h1>Aucun utilisateur trouvé 😕</h1>
+            <h1>Aucun utilisateur trouvé.. 😕</h1>
         </main>
     <?php
     } else {
-        require_once __DIR__ . "/components/component_profile.php";
+        require __DIR__ . "/layouts/component_profile.php";
     } ?>
 </body>
 

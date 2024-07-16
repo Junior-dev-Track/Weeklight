@@ -131,7 +131,7 @@ class ViewController
     public function pageProfile($url)
     {
         session_start();
-        $getAccount = new Search();
+        $getAccount = new Search;
         $_SESSION["search"] = $getAccount->profile($url);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['post_content'])) {
@@ -140,8 +140,17 @@ class ViewController
                 $tokenManager = new TokenManager;
                 $account = $tokenManager->matchToken($token);
                 if ($account) {
-                    $postModel = new Post();
-                    $postModel->createPost($account['id'], $_POST['post_content']);
+                    $postModel = new Post;
+                    $content = $_POST['post_content'];
+                    $link = $_POST['post_link'] ?? null;
+                    $image = $_FILES['post_image'] ?? null;
+
+                    // Créer le post
+                    if ($postModel->createPost($account['id'], $content, $link, $image)) {
+                        $_SESSION['message'] = "Votre post a été créé avec succès.";
+                    } else {
+                        $_SESSION['message'] = "Une erreur s'est produite lors de la création du post.";
+                    }
                 }
             }
         }
@@ -158,7 +167,7 @@ class ViewController
             $tokenManager = new TokenManager;
             $account = $tokenManager->matchToken($token);
             if ($account) {
-                $postModel = new Post();
+                $postModel = new Post;
                 $posts = $postModel->getUserPosts($account['id']);
 
                 foreach ($posts as $post) {
@@ -170,6 +179,7 @@ class ViewController
 
         include __DIR__ . "/../../public/views/page_profile.php";
     }
+
 
     public function pageError404(): void
     {
