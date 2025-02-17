@@ -4,9 +4,8 @@ La Montagne est un projet ambitieux créé par BeCode Liège. L'objectif est de 
 
 ## Équipe dans le projet
 
-Dans le projet, nous sommes 3 personnes :
+Dans le projet, il y a :
 
-- Julien Tilman (Front-End) [Lien GitHub](https://github.com/JulienTilman)
 - Marc Romero (Full-Stack) [Lien GitHub](https://github.com/webduckdodgers)
 
 ## Nom de l'application : Weeklight

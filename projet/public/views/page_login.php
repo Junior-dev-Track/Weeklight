@@ -3,10 +3,9 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scaleble=no">
   <title>Weeklight - Connexion ou Inscription</title>
-  <link rel="stylesheet" href="./../../assets/styles/import.css" />
-  <script defer src="./../assets/scripts/button_register.js"></script>
+  <link rel="stylesheet" href="/projet/public/assets/styles/import.css" />
 </head>
 
 <body>
@@ -15,5 +14,7 @@
     <?php require __DIR__ . "/layouts/component_register.php"; ?>
   </main>
 </body>
+
+<script defer src="/projet/public/assets/scripts/button_register.js"></script>
 
 </html>

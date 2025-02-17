@@ -20,9 +20,9 @@ if (!$account) {
 
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scaleble=no">
         <title>Messages | Weeklight</title>
-        <link rel="stylesheet" href="./../../assets/styles/import.css" />
+        <link rel="stylesheet" href="/projet/public/assets/styles/import.css" />
     </head>
 
     <body>

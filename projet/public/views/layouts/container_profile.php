@@ -26,7 +26,7 @@
 
     <section class="card_user">
         <div class="user_bio">
-            <img src="./../../assets/images/profile_ghost.png" alt="photo profil">
+            <img src="/projet/public/assets/images/profile_ghost.png" alt="photo profil">
             <span></span>
             <div>
                 <h2>Bio</h2>

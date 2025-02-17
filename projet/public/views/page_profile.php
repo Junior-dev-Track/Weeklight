@@ -23,17 +23,17 @@ if ($account) {
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scaleble=no">
     <title>Profil | Weeklight</title>
-    <link rel="stylesheet" href="./../../assets/styles/import.css" />
+    <link rel="stylesheet" href="/projet/public/assets/styles/import.css" />
 </head>
 
 <body>
     <?php
     if ($account) {
         require __DIR__ . "/layouts/component_navbar_menu.php";
-        echo '<script defer src="./../assets/scripts/navbar_menu.js"></script>';
-        echo '<script defer src="./../assets/scripts/button_post.js"></script>';
+        echo '<script defer src="/projet/public/assets/scripts/navbar_menu.js"></script>';
+        echo '<script defer src="/projet/public/assets/scripts/button_post.js"></script>';
     } else {
         require __DIR__ . "/layouts/component_navbar_login.php";
     }

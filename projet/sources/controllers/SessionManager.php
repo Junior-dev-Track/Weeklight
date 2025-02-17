@@ -16,13 +16,13 @@ class SessionManager
 
     public function loginUser()
     {
-        $LoginUser = new Login();
+        $LoginUser = new Login;
         return $LoginUser->authenticate($_POST['email'], $_POST['password']);
     }
 
     public function resetPassword($email)
     {
-        $resetPassword = new Password();
+        $resetPassword = new Password;
         return $resetPassword->sendAnEmail($email);
     }
 

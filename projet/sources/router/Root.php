@@ -8,7 +8,7 @@ class Root
 {
     public function __construct()
     {
-        $view = new ViewController();
+        $view = new ViewController;
 
         $url = trim(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH), "/");
 
@@ -29,6 +29,10 @@ class Root
                     $view->pageForgotPassword(null);
                 }
                 break;
+
+                // case "settings":
+                //     $view->pageSettings();
+                //     break;
 
             case "friends":
                 $view->pageFriends();
